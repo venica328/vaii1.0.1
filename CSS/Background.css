@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+}
+
+#top, #bottom, #left, #right {
+    background: #555555;
+    position: fixed;
+}
+#left, #right {
+    top: 0; bottom: 0;
+    width: 120px;
+    opacity: 0.4;
+    z-index: -1;
+}
+#left { left: 0; }
+#right { right: 0; }
+
+#top, #bottom {
+    left: 0; right: 0;
+    height: 15px;
+}
+#top { top: 0; }
+#bottom { bottom: 0; }

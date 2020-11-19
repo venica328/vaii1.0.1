@@ -1,0 +1,102 @@
+body {
+height: 300px;
+}
+
+h6 {
+    font-size: 20px;
+    font-family: cursive;
+}
+.theatre {
+    display: flex;
+    position: relative;
+    height: 140%;
+    width: auto;
+    top: 15%;
+    left: 0%;
+    justify-content: center;
+}
+
+.platno-content {
+    margin: 5%;
+}
+.cinema-seats {
+    display: flex;
+}
+.cinema-seats .seat {
+    cursor: pointer;
+}
+.cinema-seats .seat:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: lightseagreen;
+    border-radius: 7px;
+}
+.cinema-seats .seat.active:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 7px;
+}
+.left .cinema-row {
+    margin: 0 6px;
+}
+.left .seat {
+    width: 35px;
+    height: 50px;
+    border-radius: 7px;
+    background: purple;
+    margin-bottom: 5px;
+    transform: skew(0deg);
+    margin-top: -27px;
+    box-shadow: 0 0 5px white;
+}
+
+.platno {
+    height: 30px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 100px white;
+}
+
+@media (min-width: 500px) {
+    .theatre {
+        margin-left: 0%;
+    }
+    .platno {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .theatre {
+        left: 0%;
+    }
+    .platno {
+        width: 350px;
+    }
+
+}
+
+@media (min-width: 1300px) {
+    .theatre {
+        margin-left: 0%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .theatre {
+        margin-left: 0%;
+    }
+}
+
+
+

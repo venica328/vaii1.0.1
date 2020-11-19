@@ -1,0 +1,73 @@
+.navbarDays {
+    background-color: lightseagreen;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 10px 5px 5px;
+    font-family: fantasy;
+
+}
+
+.navbarDays a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: inherit;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.navbarDays a:hover {
+    background-color: white;
+    color: lightseagreen;
+
+}
+
+.navbarDays .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .navbarDays a:not(:first-child), .dropdown .dropButton {
+        display: none;
+    }
+    .navbarDays a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbarDays.responsive {position: relative;}
+    .navbarDays.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navbarDays.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .navbarDays {
+        margin: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
+    }
+    .navbarDays.responsive .dropdown {float: none;}
+    .navbarDays.responsive .dropdown-content {position: relative;}
+    .navbarDays.responsive  {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+

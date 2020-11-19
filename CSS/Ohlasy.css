@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    width: 900px;
+    margin: 20px auto;
+    border: solid 5px purple;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.chat-container {
+    height: 400px;
+    overflow: auto;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    direction: rtl;
+    font-family: cursive;
+    background-color: white;
+    font-size: 16px;
+    border: solid 2px purple;
+}
+.chat-container .message {
+    border-bottom: solid 2px purple;
+    padding: 1px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    direction: ltr;
+    background-color: lightseagreen;
+
+}
+
+.name {
+    font-family: cursive;
+    float: right;
+    background-color: white;
+    border: solid 2px purple;
+}
+
+.chat-container .message .avatar {
+    float: left;
+    border-radius: 25px;
+    border: solid 1px white;
+    justify-content: left;
+    width: 50px;
+    height: 50px;
+    margin: 1% -7% 15% 0%;
+
+}
+.chat-container .message .datetime {
+    float: left;
+    color: purple;
+}
+
+.datetime .name {
+    display: grid;
+
+}
+
+
+
+.send-message-form input {
+    width: 100%;
+    border: solid 3px purple;
+    font-size: 15px;
+    padding: 10px;
+}
+.send-message-form button {
+    display: inline-flex;
+    background-color: lightseagreen;
+    border: solid 3px purple;
+    width: 80px;
+    height: 30px;
+}
+
+.text-button {
+    font-family: cursive;
+    font-size: 15px;
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    .container {
+        width: 400px;
+        left: 0%;
+    }
+    .chat-container .message .avatar {
+        margin: 4% 7% 0% 0%;
+    }
+    p{
+        margin-left: 20%;
+        margin-top: 10%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 400px;
+        left: 0%;
+    }
+    .chat-container .message .avatar {
+        margin: 4% 7% 0% 0%;
+    }
+    p{
+        margin-left: 20%;
+        margin-top: 10%;
+        font-size: 15px;
+    }
+}
