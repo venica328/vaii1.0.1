@@ -23,7 +23,7 @@ class DBStorage extends AStorage
     function Save(User $user)
     {
         $sql = 'INSERT INTO vaiiko.userovia(nick,text) VALUES (?,?)';
-        $this->db->prepare($sql)->execute([$user->getNick(), DBStorage::words($user->getText())]);
+        $this->db->prepare($sql)->execute([$user->getNick(), $user->getText()]);
 
     }
 
@@ -35,7 +35,7 @@ class DBStorage extends AStorage
         $dbUsers = $this->db->query('SELECT * FROM vaiiko.userovia');
 
             foreach ($dbUsers as $user) {
-                $users[] = new User($user['nick'], DBStorage::words($user['text']));
+                $users[] = new User($user['id'], $user['nick'], $user['text']);
             }
 
         return $users;
@@ -44,11 +44,10 @@ class DBStorage extends AStorage
 
     function Delete(User $user)
     {
-        // TODO: Implement Delete() method.
-        $words = 'mad.txt';
-        if (isset($_GET['text'])) {
-            $this->db->query('DELETE FROM vaiiko.userovia where text like $words');
-        }
+        $id=$user->getId();
+        $sql='DELETE FROM vaiiko.userovia where id='.$id;
+
+            $this->db->query($sql);
     }
 
     public static function words($string) {

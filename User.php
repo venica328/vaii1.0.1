@@ -2,16 +2,25 @@
 
 class User
 {
+    private $id;
     private $nick;
     private $text;
 
-    public function __construct($nick, $text)
+    public function __construct($id, $nick, $text)
     {
+        $this->id = $id;
         $this->nick = $nick;
         $this->text = $text;
     }
 
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return mixed

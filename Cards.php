@@ -2,55 +2,69 @@
 <?php
 
 include 'database.php';
+include 'Informacia.php';
 
 $info = $obsah = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["delete"])) {
+        $id = $_GET["delete"];
         $db = connectDB();
-        $sql = "DELETE FROM vaiiko.table where id > 0";
+        $sql = "DELETE FROM vaiiko.table where id_filmu=$id";
         $db->query($sql);
         disconnectDB($db);
     }
 }
 
+function getInfo($id) {
+    $db = connectDB();
+
+    $dbInfos = $db->query('SELECT * FROM vaiiko.`table`');
+
+    foreach ($dbInfos as $info) {
+
+        if($info['id_filmu'] == $id) {
+            $infos[] = new Informacia($info['info'], $info['obsah']);
+        }
+    }
+
+    disconnectDB($db);
+    if(empty($infos)) {
+        $infos[] = new Informacia('', '');
+    }
+
+    return $infos[0];
+
+}
+
+
 
 function show_edit($id)
+
 {
+    $info=getInfo($id);
+
     if (!isset($_SESSION["id"]) || $_SESSION["id"] == -1) {
-        $db = connectDB();
-        $prikaz = "SELECT info, obsah FROM vaiiko.table WHERE id>0";
-        $result = $db->query($prikaz);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
                 echo '
-                    <p>' . $row["info"] . '</p>
-                    <p>' . $row["obsah"] . '</p>         
+                    <p>' . $info->getInfo() . '</p>
+                    <p>' . $info->getObsah() . '</p>         
                 ';
-            }
-        }
-        disconnectDB($db);
+
         echo '<a class="buyButton" href="Kinosala.php">NÁKUP</a>';
 
     } else {
-        $db = connectDB();
-        $prikaz = "SELECT * FROM vaiiko.`table` WHERE id>0";
-        $result = $db->query($prikaz);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '
-                                    <p>' . $row["info"] . '</p>
-                                    <p>' . $row["obsah"] . '</p>
-                                    
-                    ';
-            }
-        }
-        disconnectDB($db);
-        echo '<a class="buyButton" href="Edit.php">EDITOVANIE</a>
+        echo '
+                    <p>' . $info->getInfo() . '</p>
+                    <p>' . $info->getObsah() . '</p>         
+                ';
+
+        echo '<a class="buyButton" href="Edit.php?id_filmu='. $id .'">EDITOVANIE</a>
               <form method="post">
-              <a class="editButton" style="bottom: -80px;" type="button" href="index.php?delete">DELETE</a>
+              <a class="editButton" style="bottom: -80px;" type="button" href="index.php?delete='. $id .'">DELETE</a>
               
               </form>';
     }
+
 }
 ?>
 

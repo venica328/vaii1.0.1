@@ -4,6 +4,11 @@ include 'User.php';
 include "Words.php";
 include 'CSVStorage.php';
 include 'DBStorage.php';
+session_start();
+if (isset($_REQUEST['logout'])) {
+    $_SESSION["id"] = -1;
+    $_SESSION["username"] = "";
+}
 
 ?>
 <!DOCTYPE html>
@@ -49,9 +54,15 @@ $storage->processData();
 <div class="container">
 <div class="chat-container">
     <?php foreach ($storage->Load() as $user) { ?>
+
         <div class="message">
+            <?php if (!(!isset($_SESSION["id"]) || $_SESSION["id"] == -1)) {
+                echo '<a href="?delete='.$user->getId().'">x</a>';
+            }
+            ?>
+
             <div class="name"> <?php echo $user->getNick() ?> </div>
-            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"><?php echo DBStorage::words($user->getText()) ?></div>
+            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"><?php echo $user->getText() ?></div>
         </div>
     <?php } ?>
 </div>

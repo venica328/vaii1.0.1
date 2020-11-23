@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+if(session_id()==''||!isset($_SESSION)) {
+    session_start();
+}
+include "Cards.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +13,7 @@ session_start();
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>EviDB - Editovanie</title>
+    <title>Editovanie</title>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assets/fonts/ionicons.min.css">
@@ -23,36 +26,18 @@ session_start();
 
 
 <?php
-include 'database.php';
+//include 'database.php';
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $db = connectDB();
-    $info = test_input($_POST["info"]);
-    $obsah = test_input($_POST["obsah"]);
-
-
-    $sql = "INSERT INTO vaiiko.table ( info, obsah)" .
-        " VALUES ('$info', '$obsah')";
-
-
-    if ($db->query($sql) === TRUE) {
-        $message = "Informacie k filmu boli uspesne pridane.";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-    }
-    disconnectDB($db);
-}
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_GET["input"])) {
             $db = connectDB();
             $info = test_input($_POST["info"]);
             $obsah = test_input($_POST["obsah"]);
-
-        $sql = "UPDATE vaiiko.`table` SET info = $info, obsah = $obsah where id>0";
-
-    }
+            $id_filmu = test_input($_POST["id_filmu"]);
+        $sql = "UPDATE vaiiko.`table` SET info = '$info', obsah = '$obsah' where id_filmu=$id_filmu";
+    $db->query($sql);
+    disconnectDB($db);
 
 }
 
@@ -64,20 +49,29 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+$info=getInfo($_GET["id_filmu"]);
+
+
+
 ?>
 
 <div class="register-photo" style="background: purple;">
     <div class="form-container">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); echo'?id_filmu='.$_GET["id_filmu"] ?>">
 
             <div class="form-group"><input class="form-control"
                 style="height: 50px; background: #e7e3e8;"
-                type="text" name="info" placeholder="Názov filmu">
+                type="text" name="info" placeholder="Názov filmu" value="<?php echo $info->getInfo() ?>">
             </div>
 
             <div class="form-group"><input class="form-control"
                 style="padding: 5% 0% 30% 2%; background: #e7e3e8;"
-                type="text" name="obsah" placeholder="Obsah filmu ">
+                type="text" name="obsah" placeholder="Obsah filmu" value="<?php echo $info->getObsah() ?>">
+            </div>
+
+            <div class="form-group"><input class="form-control"
+                                           style="padding: 5% 0% 30% 2%; background: #e7e3e8;"
+                                           type="hidden" name="id_filmu" value="<?php echo ($_GET["id_filmu"]); ?>">
             </div>
 
             <div class="form-group">

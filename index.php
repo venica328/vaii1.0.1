@@ -48,13 +48,50 @@ include "NavbarDays.php"
 
 <div class="cards">
     <div class="container">
-        <div class="card1"></div>
-        <div class="overlay">
-            <div class="text">
-    <?php
-    include "Cards.php";
-    show_edit(1);
-    ?>
+        <div class="card1">
+            <div class="overlay">
+                <div class="text">
+                    <?php
+                    include "Cards.php";
+                    show_edit(0);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card2">
+            <div class="overlay">
+                <div class="text">
+                    <?php
+                    show_edit(1);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card3">
+            <div class="overlay">
+                <div class="text">
+                    <?php
+                    show_edit(2);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card4">
+            <div class="overlay">
+                <div class="text">
+                    <?php
+                    show_edit(3);
+                    ?>
+                </div>
             </div>
         </div>
     </div>

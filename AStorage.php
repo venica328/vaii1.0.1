@@ -9,7 +9,12 @@ abstract class AStorage
     public function processData()
     {
         if (isset($_POST['sent'])) {
-            $this->Save(new User($_POST['nick'],DBStorage::words($_POST['text'])));
+            $this->Save(new User(0,$_POST['nick'],$_POST['text']));
+
+        }
+
+        if (isset($_GET['delete'])) {
+            $this->Delete(new User($_GET['delete'],'',''));
 
         }
 
