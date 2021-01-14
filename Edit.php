@@ -28,8 +28,6 @@ include "Cards.php";
 <?php
 //include 'database.php';
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $db = connectDB();
             $info = test_input($_POST["info"]);
@@ -38,10 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "UPDATE vaiiko.`table` SET info = '$info', obsah = '$obsah' where id_filmu=$id_filmu";
     $db->query($sql);
     disconnectDB($db);
-
 }
-
-
 
 function test_input($data) {
     $data = trim($data);
@@ -50,8 +45,6 @@ function test_input($data) {
     return $data;
 }
 $info=getInfo($_GET["id_filmu"]);
-
-
 
 ?>
 
@@ -76,7 +69,7 @@ $info=getInfo($_GET["id_filmu"]);
 
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit"
-                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">Uloz zmeny!</button>
+                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">UPLOAD!</button>
             </div>
 
             <a href="index.php">HOME</a>

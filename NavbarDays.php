@@ -2,6 +2,7 @@
 
 echo '<nav class ="navbarDays">
 <div class="navbarDays" id="navbarDays">
+    <a href="#home" class="navbarDays" style="text-decoration: revert">PREMIETAME </a>
     <a href="#home" class="navbarDays">PONDELOK</a>
     <a href="#home" class="navbarDays">UTOROK</a>
     <a href="#home" class="navbarDays">STREDA</a>

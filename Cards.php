@@ -1,16 +1,18 @@
 
 <?php
 
-include 'database.php';
+//include 'database.php';
 include 'Informacia.php';
 
-$info = $obsah = "";
+$info = " ";
+$obsah =" ";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["delete"])) {
         $id = $_GET["delete"];
         $db = connectDB();
-        $sql = "DELETE FROM vaiiko.table where id_filmu=$id";
+       $sql = "UPDATE vaiiko.table SET info = NULL, obsah = NULL where id_filmu=$id";
+        // $sql = "DELETE FROM vaiiko.table where id_filmu=$id";
         $db->query($sql);
         disconnectDB($db);
     }
@@ -22,7 +24,6 @@ function getInfo($id) {
     $dbInfos = $db->query('SELECT * FROM vaiiko.`table`');
 
     foreach ($dbInfos as $info) {
-
         if($info['id_filmu'] == $id) {
             $infos[] = new Informacia($info['info'], $info['obsah']);
         }
@@ -30,14 +31,12 @@ function getInfo($id) {
 
     disconnectDB($db);
     if(empty($infos)) {
-        $infos[] = new Informacia('', '');
+        $infos[] = new Informacia('','');
     }
 
     return $infos[0];
 
 }
-
-
 
 function show_edit($id)
 
@@ -58,11 +57,18 @@ function show_edit($id)
                     <p>' . $info->getObsah() . '</p>         
                 ';
 
-        echo '<a class="buyButton" href="Edit.php?id_filmu='. $id .'">EDITOVANIE</a>
+        if($info->getInfo() == '' or $info->getObsah() == '') {
+            echo '<a class="buyButton" href="Edit.php?id_filmu='. $id .'">PRIDANIE</a>
+                  <a class="buyButton" style="bottom: 350%" href="Image.php?id_filmu='. $id .'">ZMENA OBRAZKA</a>
+                ';
+        } else {
+            echo '<a class="buyButton" href="Edit.php?id_filmu='. $id .'">EDITOVANIE</a>
               <form method="post">
               <a class="editButton" style="bottom: -80px;" type="button" href="index.php?delete='. $id .'">DELETE</a>
               
               </form>';
+        }
+
     }
 
 }

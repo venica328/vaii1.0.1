@@ -9,6 +9,17 @@ if (isset($_REQUEST['edit'])) {
     $_SESSION["id"] = -1;
     $_SESSION["username"] = "";
 }
+
+include 'database.php';
+
+function getName($id) {
+    $db = connectDB();
+    $sql = "SELECT nazov FROM vaiiko.images where id_filmu = $id";
+    $result = $db->query($sql);
+    $row = $result->fetch_assoc();
+    echo $row["nazov"];
+    disconnectDB($db);
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,9 +57,11 @@ show_navbar(1);
 include "NavbarDays.php"
 ?>
 
+
+
 <div class="cards">
     <div class="container">
-        <div class="card1">
+        <div class="card1" style=' background-image: url("Images/<?php getName(0);?>"); '>
             <div class="overlay">
                 <div class="text">
                     <?php
