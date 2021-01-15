@@ -1,5 +1,4 @@
 <?php
-
 function connectDB()
 {
     $conn = mysqli_connect("localhost", "root", "dtb456", "vaiiko");
@@ -14,6 +13,7 @@ function disconnectDB($vstup)
 {
     mysqli_close($vstup);
 }
+
 
 
 

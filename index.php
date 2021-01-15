@@ -9,8 +9,7 @@ if (isset($_REQUEST['edit'])) {
     $_SESSION["id"] = -1;
     $_SESSION["username"] = "";
 }
-
-include 'database.php';
+include_once "database.php";
 
 function getName($id) {
     $db = connectDB();

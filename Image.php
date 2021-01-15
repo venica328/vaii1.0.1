@@ -3,7 +3,7 @@
 if(session_id()==''||!isset($_SESSION)) {
     session_start();
 }
-//include "Cards.php";
+include_once "database.php";
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +27,14 @@ if(session_id()==''||!isset($_SESSION)) {
 
 <?php
 
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 if(isset($_POST['uploadfilesub'])) {
 //declaring variables
     $filename = $_FILES['uploadfile']['name'];
@@ -37,7 +45,7 @@ if(isset($_POST['uploadfilesub'])) {
     move_uploaded_file($filetmpname, $folder . $filename);
 //inserting image details (ie image name) in the database
     $db = connectDB();
-    $id_filmu = test_input($_POST["id_filmu"]);
+    $id_filmu = test_input($_GET["id_filmu"]);
     $sql = "UPDATE vaiiko.images SET nazov = '$filename' where id_filmu=$id_filmu";
     $db->query($sql);
 
@@ -47,13 +55,6 @@ if(isset($_POST['uploadfilesub'])) {
     disconnectDB($db);
 }
 
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-//$info=getInfo($_GET["id_filmu"]);
 
 ?>
 

@@ -1,8 +1,8 @@
 <?php
-
 if(session_id()==''||!isset($_SESSION)) {
     session_start();
 }
+
 include "Cards.php";
 ?>
 
@@ -26,7 +26,6 @@ include "Cards.php";
 
 
 <?php
-//include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $db = connectDB();
@@ -57,9 +56,8 @@ $info=getInfo($_GET["id_filmu"]);
                 type="text" name="info" placeholder="Názov filmu" value="<?php echo $info->getInfo() ?>">
             </div>
 
-            <div class="form-group"><input class="form-control"
-                style="padding: 5% 0% 30% 2%; background: #e7e3e8;"
-                type="text" name="obsah" placeholder="Obsah filmu" value="<?php echo $info->getObsah() ?>">
+            <div class="form-group"><textarea class="form-control"
+                style="padding: 5% 0% 30% 2%; background: #e7e3e8;" type="text" name="obsah" placeholder="Obsah filmu"> <?php echo $info->getObsah() ?> </textarea>
             </div>
 
             <div class="form-group"><input class="form-control"

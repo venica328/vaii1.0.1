@@ -1,11 +1,12 @@
+<?php
+include_once "Informacia.php";
+include_once "database.php";
+?>
 
 <?php
-
-//include 'database.php';
-include 'Informacia.php';
-
 $info = " ";
 $obsah =" ";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["delete"])) {
@@ -49,7 +50,7 @@ function show_edit($id)
                     <p>' . $info->getObsah() . '</p>         
                 ';
 
-        echo '<a class="buyButton" href="Kinosala.php">NÁKUP</a>';
+        echo '<a class="buyButton" href="Kinosala.php?id_filmu='. $id .'">NÁKUP</a>';
 
     } else {
         echo '
