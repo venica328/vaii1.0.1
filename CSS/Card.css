@@ -60,7 +60,21 @@ body {
     font-family: system-ui;
 }
 
-
+.cardButtons {
+    display: block;
+    position: inherit;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: lightseagreen;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    bottom: -10%;
+    right: 0%;
+    border-radius: 4px;
+}
 
 .container:hover .overlay {
     opacity: 1;
@@ -262,7 +276,6 @@ body {
 }
 
 .card2 {
-    background-image: url("../Images/mulan.png");
     background-repeat: no-repeat;
     object-fit: fill;
     align-content: initial;
@@ -273,7 +286,6 @@ body {
 }
 
 .card3 {
-    background-image: url("../Images/after.png");
     background-repeat: no-repeat;
     object-fit: fill;
     align-content: initial;
@@ -284,7 +296,6 @@ body {
 }
 
 .card4 {
-    background-image: url("../Images/akoDostatDedaZDomu.png");
     background-repeat: no-repeat;
     object-fit: fill;
     align-content: initial;
@@ -294,25 +305,4 @@ body {
     width: 100%;
 }
 
-.card5 {
-    background-image: url("../Images/pomsta.png");
-    background-repeat: no-repeat;
-    object-fit: fill;
-    align-content: initial;
-    padding: 5rem;
-    height: 19rem;
-    display: block;
-    width: 100%;
-}
-
-.card6 {
-    background-image: url("../Images/palmSprings.png");
-    background-repeat: no-repeat;
-    object-fit: fill;
-    align-content: initial;
-    padding: 5rem;
-    height: 19rem;
-    display: block;
-    width: 100%;
-}
 

@@ -64,7 +64,7 @@ include "NavbarDays.php"
             <div class="overlay">
                 <div class="text">
                     <?php
-                    include "Cards.php";
+                    include_once "Cards.php";
                     show_edit(0);
                     ?>
                 </div>
@@ -73,10 +73,11 @@ include "NavbarDays.php"
     </div>
 
     <div class="container">
-        <div class="card2">
+        <div class="card2" style=' background-image: url("Images/<?php getName(1);?>"); '>
             <div class="overlay">
                 <div class="text">
                     <?php
+                    include_once "Cards.php";
                     show_edit(1);
                     ?>
                 </div>
@@ -85,10 +86,11 @@ include "NavbarDays.php"
     </div>
 
     <div class="container">
-        <div class="card3">
+        <div class="card3" style=' background-image: url("Images/<?php getName(2);?>"); '>
             <div class="overlay">
                 <div class="text">
                     <?php
+                    include_once "Cards.php";
                     show_edit(2);
                     ?>
                 </div>
@@ -97,10 +99,11 @@ include "NavbarDays.php"
     </div>
 
     <div class="container">
-        <div class="card4">
+        <div class="card4" style=' background-image: url("Images/<?php getName(3);?>"); '>
             <div class="overlay">
                 <div class="text">
                     <?php
+                    include_once "Cards.php";
                     show_edit(3);
                     ?>
                 </div>
@@ -124,6 +127,8 @@ include "Footer.php"
 <script src="Assets/js/Example.js"></script>
 <script src="Assets/js/Example2.js"></script>
 <script src="Assets/js/displayFunction.js"></script>
+<script> function alertDelete() { alert("Vymazali ste dáta!")}</script>
+
 
 
 

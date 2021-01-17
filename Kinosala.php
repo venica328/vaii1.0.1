@@ -122,15 +122,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2><?php echo $info->getInfo() ?></h2>
         </div>
         <div class="modal-body">
-            <p>Objednavate si stolicku s cislo: </p>
+            <p>Objednávate si stoličku s číslom: </p>
             <div id="stolicka"></div>
         </div>
         <div class="modal-footer">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); echo'?id_filmu='.$_GET["id_filmu"] ?>">
                 <input type="hidden" name="id_filmu" value="<?php echo ($_GET["id_filmu"]); ?>">
                 <input type="hidden" id="id_sedadla" name="id_sedadla">
-                <button class="btn btn-primary btn-block" type="submit"
-                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">POTVRDIT!</button>
+                <button class="submitButton" type="submit"
+                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">POTVRDIŤ!</button>
             </form>
         </div>
     </div>

@@ -30,7 +30,7 @@
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: purple;
     color: white;
 }
 
@@ -39,8 +39,8 @@
 
 /* Modal Footer */
 .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
+    padding: 20px 16px;
+    background-color: purple;
     color: white;
 }
 
@@ -50,12 +50,35 @@
     background-color: #fefefe;
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 5px solid lightseagreen;
+    border-radius: 10px;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
     animation-duration: 0.4s
 }
+
+.submitButton {
+    display: block;
+    position: inherit;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: lightseagreen;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    bottom: -10%;
+    right: 0%;
+    border-radius: 4px;
+}
+
+.submitButton:hover {
+    background-color: white;
+    color: purple;
+}
+
 
 /* Add Animation */
 @keyframes animatetop {

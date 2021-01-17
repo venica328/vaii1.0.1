@@ -66,7 +66,7 @@ $info=getInfo($_GET["id_filmu"]);
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit"
+                <button class="btn btn-primary btn-block" onclick="alertAdd()" type="submit"
                         style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">UPLOAD!</button>
             </div>
 
@@ -81,6 +81,7 @@ $info=getInfo($_GET["id_filmu"]);
 
 <script src="Assets/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.edit.js"></script>
+<script> function alertAdd() { alert("Pridali ste dáta!")}</script>
 
 </body>
 </html>

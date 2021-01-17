@@ -29,6 +29,14 @@ h1 {
     font-family: fantasy;
 }
 
+.navbarCards {
+    background-color: purple;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    font-family: fantasy;
+}
+
 .navbar a {
     float: left;
     display: block;

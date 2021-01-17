@@ -48,10 +48,6 @@ if(isset($_POST['uploadfilesub'])) {
     $id_filmu = test_input($_GET["id_filmu"]);
     $sql = "UPDATE vaiiko.images SET nazov = '$filename' where id_filmu=$id_filmu";
     $db->query($sql);
-
-    if ($db) {
-        echo "</br>image uploaded";
-    }
     disconnectDB($db);
 }
 
@@ -63,9 +59,7 @@ if(isset($_POST['uploadfilesub'])) {
 
         <form action="" method="post" enctype="multipart/form-data" >
             <input type="file" name="uploadfile" />
-            <input type="submit" name="uploadfilesub" value="upload" />
-
-
+            <input type="submit" onclick="alertImage()" name="uploadfilesub" value="upload" />
             <a href="index.php">HOME</a>
         </form>
     </div>
@@ -76,6 +70,7 @@ if(isset($_POST['uploadfilesub'])) {
 
 <script src="Assets/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.edit.js"></script>
+<script> function alertImage() { alert("Pridali ste obrázok!")}</script>
 
 </body>
 </html>
