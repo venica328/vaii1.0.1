@@ -74,7 +74,7 @@ $storage->processData();
         <label>
             <input type="text" name="text" placeholder="Komentár" required>
         </label>
-        <input type="submit" class="text-button" name="sent">SEND</input>
+        <input type="submit" class="text-button" name="sent">
     </form>
 
 </div>

@@ -127,11 +127,6 @@ include "Footer.php"
 <script src="Assets/js/Example.js"></script>
 <script src="Assets/js/Example2.js"></script>
 <script src="Assets/js/displayFunction.js"></script>
-<script> function alertDelete() { alert("Vymazali ste dáta!")}</script>
-
-
-
-
 
 </body>
 </html>

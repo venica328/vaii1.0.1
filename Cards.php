@@ -60,7 +60,7 @@ function show_edit($id)
                 ';
 
         if ($info->getInfo() == '' or $info->getObsah() == '') {
-            echo '<div class="navbarCards" id="myNavbar">
+            echo '<div class="navbarCards">
                   <div class="dropdown">
                     <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
@@ -74,7 +74,7 @@ function show_edit($id)
                 ';
         } else {
             echo '
-              <div class="navbarCards" id="myNavbar">
+              <div class="navbarCards">
                   <div class="dropdown">
                     <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
@@ -89,9 +89,7 @@ function show_edit($id)
                 
               ';
         }
-
     }
-
 }
 
 ?>

@@ -70,7 +70,7 @@ if(isset($_POST['uploadfilesub'])) {
 
 <script src="Assets/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.edit.js"></script>
-<script> function alertImage() { alert("Pridali ste obrázok!")}</script>
+<script src="Assets/js/displayFunction.js"></script>
 
 </body>
 </html>

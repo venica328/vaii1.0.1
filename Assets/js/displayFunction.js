@@ -6,3 +6,15 @@ function showFunction() {
         x.style.display = "none";
     }
 }
+
+function alertDelete() {
+    alert("Vymazali ste dáta!")
+}
+
+function alertAdd() {
+    alert("Pridali ste dáta!")
+}
+
+function alertImage() {
+    alert("Pridali ste obrázok!")
+}

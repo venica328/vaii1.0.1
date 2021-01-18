@@ -28,9 +28,9 @@ include_once "Informacia.php";
 
     <title>KINOSÁLA</title>
 </head>
-<h1>KINOPRO</h1>
-<body>
 
+<body>
+<h1>KINOPRO</h1>
 <div id="left"></div>
 <div id="right"></div>
 
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2><?php echo $info->getInfo() ?></h2>
+            <h2>nazov: <?php echo $info->getInfo() ?></h2>
         </div>
         <div class="modal-body">
             <p>Objednávate si stoličku s číslom: </p>

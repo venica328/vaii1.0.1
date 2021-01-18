@@ -81,7 +81,7 @@ $info=getInfo($_GET["id_filmu"]);
 
 <script src="Assets/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.edit.js"></script>
-<script> function alertAdd() { alert("Pridali ste dáta!")}</script>
+<script src="Assets/js/displayFunction.js"></script>
 
 </body>
 </html>
