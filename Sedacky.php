@@ -1,15 +1,15 @@
 <?php
 
 
-class Image
+class Sedacky
 {
     private $id;
-    private $nazov;
+    private $id_sedadla;
 
-    public function __construct($id, $nazov)
+    public function __construct($id, $id_sedadla)
     {
         $this->id = $id;
-        $this->nick = $nazov;
+        $this->id_sedadla = $id_sedadla;
     }
 
     /**
@@ -23,9 +23,9 @@ class Image
     /**
      * @return mixed
      */
-    public function getNazov()
+    public function getIdSedadla()
     {
-        return $this->nazov;
+        return $this->id_sedadla;
     }
 
     /**
@@ -37,10 +37,10 @@ class Image
     }
 
     /**
-     * @param mixed $nazov
+     * @param mixed $id_sedadla
      */
-    public function setNazov($nazov): void
+    public function setIdSedadla($id_sedadla): void
     {
-        $this->nazov = $nazov;
+        $this->id_sedadla = $id_sedadla;
     }
 }

@@ -10,7 +10,7 @@ echo '<nav class ="navbarDays">
     <a href="#home" class="navbarDays">PIATOK</a>
     <a href="#home" class="navbarDays">SOBOTA</a>
     <a href="#home" class="navbarDays">NEDEĽA</a>
-    
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
     
 </div>
 </nav>';

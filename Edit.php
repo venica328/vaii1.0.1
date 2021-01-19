@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $info = test_input($_POST["info"]);
             $obsah = test_input($_POST["obsah"]);
             $id_filmu = test_input($_POST["id_filmu"]);
-        $sql = "UPDATE vaiiko.`table` SET info = '$info', obsah = '$obsah' where id_filmu=$id_filmu";
+        $sql = "UPDATE vaiiko.filmy SET info = '$info', obsah = '$obsah' where id_filmu=$id_filmu";
     $db->query($sql);
     disconnectDB($db);
 }
@@ -57,7 +57,7 @@ $info=getInfo($_GET["id_filmu"]);
             </div>
 
             <div class="form-group"><textarea class="form-control"
-                style="padding: 5% 0% 30% 2%; background: #e7e3e8;" type="text" name="obsah" placeholder="Obsah filmu"> <?php echo $info->getObsah() ?> </textarea>
+                style="padding: 5% 0% 30% 2%; background: #e7e3e8;" type="text" name="obsah" placeholder="Obsah filmu">Obsah filmu: <?php echo $info->getObsah() ?>  </textarea>
             </div>
 
             <div class="form-group"><input class="form-control"

@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Komentar
 {
     private $id;
     private $nick;

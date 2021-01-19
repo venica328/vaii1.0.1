@@ -3,7 +3,7 @@ $_SERVER["SERVER_NAME"]="localhost";
 session_start();
 
 include_once "database.php";
-include_once "Informacia.php";
+include_once "Film.php";
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ include "Footer.php"
 function getInfo($id) {
     $db = connectDB();
 
-    $dbInfos = $db->query('SELECT * FROM vaiiko.`table`');
+    $dbInfos = $db->query('SELECT * FROM vaiiko.filmy');
 
     foreach ($dbInfos as $info) {
         if($info['id_filmu'] == $id) {

@@ -1,9 +1,7 @@
 <?php
 
-include 'User.php';
-include "Words.php";
-include 'CSVStorage.php';
-include 'DBStorage.php';
+include 'Komentar.php';
+include 'DBKomentare.php';
 session_start();
 if (isset($_REQUEST['logout'])) {
     $_SESSION["id"] = -1;
@@ -46,23 +44,23 @@ show_navbar(1);
 include "NavbarDays.php"
 ?>
 <?php
-//$storage = new CSVStorage('data.csv');
-$storage = new DBStorage();
+
+$storage = new DBKomentare();
 $storage->processData();
 ?>
 
 <div class="container">
 <div class="chat-container">
-    <?php foreach ($storage->Load() as $user) { ?>
+    <?php foreach ($storage->Load() as $komentar) { ?>
 
         <div class="message">
             <?php if (!(!isset($_SESSION["id"]) || $_SESSION["id"] == -1)) {
-                echo '<a href="?delete='.$user->getId().'">x</a>';
+                echo '<a href="?delete='.$komentar->getId().'">x</a>';
             }
             ?>
 
-            <div class="name"> <?php echo $user->getNick() ?> </div>
-            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"><?php echo $user->getText() ?></div>
+            <div class="name"> <?php echo $komentar->getNick() ?> </div>
+            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"><?php echo $komentar->getText() ?></div>
         </div>
     <?php } ?>
 </div>

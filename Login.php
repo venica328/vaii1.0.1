@@ -47,8 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 location.replace('login.php')</script>";
         }
 
-
-
     }
     disconnectDB($db);
 }

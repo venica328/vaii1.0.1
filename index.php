@@ -22,13 +22,14 @@ function getName($id) {
 ?>
 
 <!DOCTYPE html>
-<html lang="sk">
+<html class="no-js" lang="sk">
 
 <head>
 
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/Navbar.css">
     <link rel="stylesheet" href="CSS/Background.css">
@@ -39,18 +40,23 @@ function getName($id) {
     <link rel="stylesheet" href="CSS/Footer-Dark.css">
 
 
+
     <title>HOME</title>
 </head>
 
 <body>
+
 <h1>KINOPRO</h1>
 <div id="left"></div>
 <div id="right"></div>
+
 
 <?php
 include "Navbar.php";
 show_navbar(1);
 ?>
+
+
 
 <?php
 include "NavbarDays.php"
@@ -119,7 +125,7 @@ include "scrollButton.php"
 ?>
 
 <?php
-include "Footer.php"
+include "Footer.php";
 ?>
 
 

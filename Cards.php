@@ -1,5 +1,5 @@
 <?php
-include_once "Informacia.php";
+include_once "Film.php";
 include_once "database.php";
 ?>
 
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["delete"])) {
         $id = $_GET["delete"];
         $db = connectDB();
-        $sql = "UPDATE vaiiko.table SET info = NULL, obsah = NULL where id_filmu=$id";
+        $sql = "UPDATE vaiiko.filmy SET info = NULL, obsah = NULL where id_filmu=$id";
         // $sql = "DELETE FROM vaiiko.table where id_filmu=$id";
         $db->query($sql);
         disconnectDB($db);
@@ -23,7 +23,7 @@ function getInfo($id)
 {
     $db = connectDB();
 
-    $dbInfos = $db->query('SELECT * FROM vaiiko.`table`');
+    $dbInfos = $db->query('SELECT * FROM vaiiko.filmy');
 
     foreach ($dbInfos as $info) {
         if ($info['id_filmu'] == $id) {
