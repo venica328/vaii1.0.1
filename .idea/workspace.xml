@@ -19,39 +19,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="Zvalidované!">
-      <change afterPath="$PROJECT_DIR$/Assets/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBFilmy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBImages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBKinosala.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBKomentare.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBPouzivatelia.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Film.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Imagess.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pouzivatel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sedacky.php" afterDir="false" />
+    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="Prerabanie databazy plus navrh. Doplnene tabulky o foreign kuce pre prepojenie tabuliek. Novovzniknute triedy objektovo riesene ktore nahradia zle chaoticke triedy.">
+      <change afterPath="$PROJECT_DIR$/Controlers/DBPouzivatelia.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Head.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0427a834-8161-4cf6-9520-b5c81e582601.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0427a834-8161-4cf6-9520-b5c81e582601.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AStorage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSVStorage.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Cards.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cards.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBStorage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IStorage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Kinosala.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBFilmy.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBFilmy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBImages.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBKinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBKinosala.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBKomentare.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBKomentare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBPouzivatelia.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Film.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Film.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagess.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Komentar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Komentar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Komentare.php" beforeDir="false" afterPath="$PROJECT_DIR$/Komentare.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NavbarDays.php" beforeDir="false" afterPath="$PROJECT_DIR$/NavbarDays.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Komentar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Words.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ohlasy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pouzivatel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Pouzivatel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sedacky.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sedacky.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aer/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/aer/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bad.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +89,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\3.ZS\VAII_NOVE\php_mysql\www\Views" />
+      <recent name="D:\3.ZS\VAII_NOVE\php_mysql\www\Databases" />
+      <recent name="D:\3.ZS\VAII_NOVE\php_mysql\www\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\3.ZS\VAII_NOVE\php_mysql\www" />
       <recent name="D:\3.ZS\VAII_NOVE\php_mysql\www\bootstrap\css" />
@@ -144,7 +140,8 @@
       <workItem from="1610958371738" duration="806000" />
       <workItem from="1610997828357" duration="2248000" />
       <workItem from="1611000233592" duration="5271000" />
-      <workItem from="1611054869466" duration="15809000" />
+      <workItem from="1611054869466" duration="15972000" />
+      <workItem from="1611252679440" duration="8209000" />
     </task>
     <task id="LOCAL-00001" summary="last change">
       <created>1606173753829</created>
@@ -181,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610958980524</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Prerabanie databazy plus navrh. Doplnene tabulky o foreign kuce pre prepojenie tabuliek. Novovzniknute triedy objektovo riesene ktore nahradia zle chaoticke triedy.">
+      <created>1611080681339</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611080681339</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +209,8 @@
     <MESSAGE value="Spojazdneny vyber miest v kine na sedenie, vytvorenim aj novej databazi kinosala. Upraveny text v Edite aby nebol v jednom riadku." />
     <MESSAGE value="Doplnené alert funkcie pre výpis, čo sa stalo plus doladenie cards, kde som dala pre administrátora výber funkcionalít do navbaru." />
     <MESSAGE value="Zvalidované!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zvalidované!" />
+    <MESSAGE value="Prerabanie databazy plus navrh. Doplnene tabulky o foreign kuce pre prepojenie tabuliek. Novovzniknute triedy objektovo riesene ktore nahradia zle chaoticke triedy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Prerabanie databazy plus navrh. Doplnene tabulky o foreign kuce pre prepojenie tabuliek. Novovzniknute triedy objektovo riesene ktore nahradia zle chaoticke triedy." />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="67" key="#CLI_Interpreters" timestamp="1606158962028">
@@ -256,62 +261,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1605824315473" />
-    <state width="1493" height="15" key="GridCell.Tab.0.bottom" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.0.bottom" timestamp="1611258856262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.0.center" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856262" />
+    <state width="1493" height="55" key="GridCell.Tab.0.center" timestamp="1611258856262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.0.left" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856262" />
+    <state width="1493" height="55" key="GridCell.Tab.0.left" timestamp="1611258856262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.0.right" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856262" />
+    <state width="1493" height="55" key="GridCell.Tab.0.right" timestamp="1611258856262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.1.bottom" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856262" />
+    <state width="1493" height="55" key="GridCell.Tab.1.bottom" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.1.center" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
+    <state width="1493" height="55" key="GridCell.Tab.1.center" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.1.left" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
+    <state width="1493" height="55" key="GridCell.Tab.1.left" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.1.right" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
+    <state width="1493" height="55" key="GridCell.Tab.1.right" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.2.bottom" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
+    <state width="1493" height="55" key="GridCell.Tab.2.bottom" timestamp="1611258856264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.2.center" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856264" />
+    <state width="1493" height="55" key="GridCell.Tab.2.center" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.2.left" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
+    <state width="1493" height="55" key="GridCell.Tab.2.left" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
-    <state width="1493" height="15" key="GridCell.Tab.2.right" timestamp="1610743166287">
+    <state width="1493" height="55" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
+    <state width="1493" height="55" key="GridCell.Tab.2.right" timestamp="1611258856263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="15" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610743166287" />
+    <state width="1493" height="55" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258856263" />
     <state x="588" y="135" key="NewPhpClassDialog" timestamp="1611080156624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="588" y="135" key="NewPhpClassDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611080156624" />
-    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1610648538920">
+    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1611253718611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610648538920" />
+    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611253718611" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1606158966864">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -320,10 +325,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1605787907737" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610958983038">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611080690125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1610919009139" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611080690125" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610958983038" />
     <state x="668" y="289" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605727085480">
       <screen x="0" y="0" width="1536" height="824" />
@@ -337,14 +342,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="232" width="403" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611075453423" />
-    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611076016442">
+    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611257484784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611076016442" />
+    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611257484784" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611258363933">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611258363933" />
     <state x="651" y="292" key="data.grid.dml.preview.dialog" timestamp="1606165272661">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="651" y="292" key="data.grid.dml.preview.dialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1606165272661" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1611256941269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611256941269" />
     <state x="599" y="203" key="svn.repositoryBrowser" timestamp="1605824500808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

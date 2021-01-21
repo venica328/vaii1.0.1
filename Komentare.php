@@ -1,7 +1,7 @@
 <?php
 
-include 'Komentar.php';
-include 'DBKomentare.php';
+include 'Models/Komentar.php';
+include 'Controlers/DBKomentare.php';
 session_start();
 if (isset($_REQUEST['logout'])) {
     $_SESSION["id"] = -1;
@@ -13,18 +13,9 @@ if (isset($_REQUEST['logout'])) {
 <html lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/Navbar.css">
-    <link rel="stylesheet" href="CSS/Background.css">
-    <link rel="stylesheet" href="CSS/Card.css">
-    <link rel="stylesheet" href="CSS/scrollButton.css">
-    <link rel="stylesheet" href="CSS/BuyTickets.css">
-    <link rel="stylesheet" href="CSS/NavbarDays.css">
-    <link rel="stylesheet" href="CSS/Footer-Dark.css">
+    <?php
+    include "Head.php";
+    ?>
     <link rel="stylesheet" href="CSS/Ohlasy.css">
 
     <title>HOME</title>
@@ -46,7 +37,15 @@ include "NavbarDays.php"
 <?php
 
 $storage = new DBKomentare();
-$storage->processData();
+
+if(isset($_POST["nick"]) && isset($_POST["text"])) {
+    $kom = new Komentar(0,$_POST["nick"], $_POST["text"]);
+    $storage->Save($kom);
+}
+
+if(isset($_GET["delete"])) {
+    $storage->Delete($_GET["delete"]);
+}
 ?>
 
 <div class="container">

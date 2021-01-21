@@ -6,12 +6,14 @@ class Film
     private $id_filmu;
     private $info;
     private $obsah;
+    private $obrazok;
 
-    public function __construct($id_filmu, $info, $obsah)
+    public function __construct($id_filmu, $info, $obsah, $obrazok)
     {
         $this->id_filmu = $id_filmu;
         $this->info = $info;
         $this->obsah = $obsah;
+        $this->obrazok = $obrazok;
     }
 
     /**
@@ -39,6 +41,14 @@ class Film
     }
 
     /**
+     * @return mixed
+     */
+    public function getObrazok()
+    {
+        return $this->obrazok;
+    }
+
+    /**
      * @param mixed $id_filmu
      */
     public function setIdFilmu($id_filmu): void
@@ -60,5 +70,13 @@ class Film
     public function setObsah($obsah): void
     {
         $this->obsah = $obsah;
+    }
+
+    /**
+     * @param mixed $obrazok
+     */
+    public function setObrazok($obrazok): void
+    {
+        $this->obrazok = $obrazok;
     }
 }

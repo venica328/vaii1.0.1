@@ -16,7 +16,7 @@ echo '<nav class ="navbar">
         </div>
         
     </div>
-    <a href="Login.php">LOGIN</a>
+    <a href="Views/Login.php">LOGIN</a>
     
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>

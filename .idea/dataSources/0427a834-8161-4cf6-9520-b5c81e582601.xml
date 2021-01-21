@@ -5119,121 +5119,129 @@
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="1226" parent="416" name="PRIMARY">
+    <column id="1226" parent="416" name="obrazok">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="1227" parent="416" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_filmu</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="1227" parent="417" name="id">
+    <column id="1228" parent="417" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1228" parent="417" name="id_filmu">
+    <column id="1229" parent="417" name="id_filmu">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="1229" parent="417" name="nazov">
+    <column id="1230" parent="417" name="nazov">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1230" parent="417" name="images_filmy_id_filmu_fk">
+    <index id="1231" parent="417" name="images_filmy_id_filmu_fk">
       <ColNames>id_filmu</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1231" parent="417" name="PRIMARY">
+    <key id="1232" parent="417" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1232" parent="417" name="images_filmy_id_filmu_fk">
+    <foreign-key id="1233" parent="417" name="images_filmy_id_filmu_fk">
       <ColNames>id_filmu</ColNames>
       <RefTableName>filmy</RefTableName>
       <RefColNames>id_filmu</RefColNames>
     </foreign-key>
-    <column id="1233" parent="418" name="id">
+    <column id="1234" parent="418" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1234" parent="418" name="id_filmu">
+    <column id="1235" parent="418" name="id_filmu">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1235" parent="418" name="id_pouzivatela">
+    <column id="1236" parent="418" name="id_pouzivatela">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="1236" parent="418" name="id_sedadla">
+    <column id="1237" parent="418" name="id_sedadla">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1237" parent="418" name="kinosala_filmy_id_filmu_fk">
+    <index id="1238" parent="418" name="kinosala_filmy_id_filmu_fk">
       <ColNames>id_filmu</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="1238" parent="418" name="kinosala_pouzivatelia_id_pouzivatela_fk">
+    <index id="1239" parent="418" name="kinosala_pouzivatelia_id_pouzivatela_fk">
       <ColNames>id_pouzivatela</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1239" parent="418" name="PRIMARY">
+    <key id="1240" parent="418" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1240" parent="418" name="kinosala_filmy_id_filmu_fk">
+    <foreign-key id="1241" parent="418" name="kinosala_filmy_id_filmu_fk">
       <ColNames>id_filmu</ColNames>
       <RefTableName>filmy</RefTableName>
       <RefColNames>id_filmu</RefColNames>
     </foreign-key>
-    <foreign-key id="1241" parent="418" name="kinosala_pouzivatelia_id_pouzivatela_fk">
+    <foreign-key id="1242" parent="418" name="kinosala_pouzivatelia_id_pouzivatela_fk">
       <ColNames>id_pouzivatela</ColNames>
       <RefTableName>pouzivatelia</RefTableName>
       <RefColNames>id_pouzivatela</RefColNames>
     </foreign-key>
-    <column id="1242" parent="419" name="id">
+    <column id="1243" parent="419" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1243" parent="419" name="nick">
+    <column id="1244" parent="419" name="nick">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1244" parent="419" name="text">
+    <column id="1245" parent="419" name="text">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="1245" parent="419" name="PRIMARY">
+    <key id="1246" parent="419" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="1246" parent="420" name="id_pouzivatela">
+    <column id="1247" parent="420" name="id_pouzivatela">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1247" parent="420" name="username">
+    <column id="1248" parent="420" name="username">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1248" parent="420" name="password">
+    <column id="1249" parent="420" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="1249" parent="420" name="PRIMARY">
+    <column id="1250" parent="420" name="isAdmin">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0s</DataType>
+    </column>
+    <key id="1251" parent="420" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pouzivatela</ColNames>
       <Primary>1</Primary>

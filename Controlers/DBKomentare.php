@@ -38,9 +38,8 @@ class DBKomentare
         return $komentare;
     }
 
-    function Delete(Komentar $komentar)
+    function Delete($id)
     {
-        $id=$komentar->getId();
         $sql= 'DELETE FROM vaiiko.komentare where id=' .$id;
         $this->db->query($sql);
     }

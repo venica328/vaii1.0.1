@@ -1,71 +1,33 @@
 <?php
-include_once "Film.php";
-include_once "database.php";
+include "Models/Film.php";
+include "Controlers/DBFilmy.php";
 ?>
 
 <?php
-$info = " ";
-$obsah = " ";
 
-
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["delete"])) {
-        $id = $_GET["delete"];
-        $db = connectDB();
-        $sql = "UPDATE vaiiko.filmy SET info = NULL, obsah = NULL where id_filmu=$id";
-        // $sql = "DELETE FROM vaiiko.table where id_filmu=$id";
-        $db->query($sql);
-        disconnectDB($db);
-    }
-}
-
-function getInfo($id)
-{
-    $db = connectDB();
-
-    $dbInfos = $db->query('SELECT * FROM vaiiko.filmy');
-
-    foreach ($dbInfos as $info) {
-        if ($info['id_filmu'] == $id) {
-            $infos[] = new Informacia($info['info'], $info['obsah']);
-        }
-    }
-
-    disconnectDB($db);
-    if (empty($infos)) {
-        $infos[] = new Informacia('', '');
-    }
-
-    return $infos[0];
-
-}
-
-function show_edit($id)
-
-{
-    $info = getInfo($id);
+function show_edit($film){
 
     if (!isset($_SESSION["id"]) || $_SESSION["id"] == -1) {
         echo '
-                    <p>' . $info->getInfo() . '</p>
-                    <p>' . $info->getObsah() . '</p>         
+                    <p>' . $film->getInfo() . '</p>
+                    <p>' . $film->getObsah() . '</p>         
                 ';
 
-        echo '<a class="buyButton" href="Kinosala.php?id_filmu=' . $id . '">NÁKUP</a>';
+        echo '<a class="buyButton" href="Kinosala.php?id_filmu=' . $film->getIdFilmu() . '">NÁKUP</a>';
 
     } else {
         echo '
-                    <p>' . $info->getInfo() . '</p>
-                    <p>' . $info->getObsah() . '</p>         
+                    <p>' . $film->getInfo() . '</p>
+                    <p>' . $film->getObsah() . '</p>         
                 ';
 
-        if ($info->getInfo() == '' or $info->getObsah() == '') {
+        if ($film->getInfo() == '' or $film->getObsah() == '') {
             echo '<div class="navbarCards">
                   <div class="dropdown">
                     <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
-                        <a style="text-align: right; padding: 2px 30px;" href="Edit.php?id_filmu=' . $id . '">EDITOVANIE</a>
-                        <a style="text-align: right; padding: 2px 30px;" href="Image.php?id_filmu=' . $id . '">OBRÁZOK</a>
+                        <a style="text-align: right; padding: 2px 30px;" href="Edit.php?id_filmu=' . $film->getIdFilmu()  . '">EDITOVANIE</a>
+                        <a style="text-align: right; padding: 2px 30px;" href="Image.php?id_filmu=' . $film->getIdFilmu()  . '">OBRÁZOK</a>
                         <form method="post">
                         </form>
                     </div>
@@ -78,10 +40,10 @@ function show_edit($id)
                   <div class="dropdown">
                     <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
-                        <a style="text-align: right; padding: 2px 30px;" href="Edit.php?id_filmu=' . $id . '">EDITOVANIE</a>
-                        <a style="text-align: right; padding: 2px 30px;" href="Image.php?id_filmu=' . $id . '">OBRÁZOK</a>
+                        <a style="text-align: right; padding: 2px 30px;" href="Edit.php?id_filmu=' . $film->getIdFilmu()  . '">EDITOVANIE</a>
+                        <a style="text-align: right; padding: 2px 30px;" href="Image.php?id_filmu=' . $film->getIdFilmu()  . '">OBRÁZOK</a>
                         <form method="post">
-                          <a onclick="alertDelete()" style="text-align: right; padding: 2px 30px;" href="index.php?delete=' . $id . '">DELETE</a>
+                          <a onclick="alertDelete()" style="text-align: right; padding: 2px 30px;" href="index.php?delete=' . $film->getIdFilmu()  . '">DELETE</a>
                         </form>
                     </div>
                   </div>

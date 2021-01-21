@@ -6,12 +6,14 @@ class Pouzivatel
     private $id_pouzivatela;
     private $username;
     private $password;
+    private $isAdmin;
 
-    public function __construct($id_pouzivatela, $username, $password)
+    public function __construct($id_pouzivatela, $username, $password, $isAdmin)
     {
         $this->id_pouzivatela = $id_pouzivatela;
         $this->username = $username;
         $this->password = $password;
+        $this->isAdmin = $isAdmin;
     }
 
     /**
@@ -39,6 +41,14 @@ class Pouzivatel
     }
 
     /**
+     * @return mixed
+     */
+    public function getIsAdmin()
+    {
+        return $this->isAdmin;
+    }
+
+    /**
      * @param mixed $id_pouzivatela
      */
     public function setIdPouzivatela($id_pouzivatela): void
@@ -60,5 +70,13 @@ class Pouzivatel
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+
+    /**
+     * @param mixed $isAdmin
+     */
+    public function setIsAdmin($isAdmin): void
+    {
+        $this->isAdmin = $isAdmin;
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
 
-class DBFilmy
+class DBKinosala
 {
+
     private const DB_HOST = 'localhost';
     private const DB_NAME = 'messenger';
     private const DB_USER = 'root';
@@ -19,30 +20,35 @@ class DBFilmy
 
     }
 
-    function Save(Film $film)
+    function Save(Sedacky $sedacky)
     {
-        $sql = 'INSERT INTO vaiiko.filmy(info, obsah) VALUES (?,?)';
-        $this->db->prepare($sql)->execute([$film->getInfo(), $film->getObsah()]);
+        $sql = 'INSERT INTO vaiiko.kinosala(id_sedadla) VALUES (?)';
+        $this->db->prepare($sql)->execute([$sedacky->getIdSedadla()]);
 
     }
 
     public function Load()
     {
-        $filmy = [];
-        $dbFilmy = $this->db->query('SELECT * FROM vaiiko.filmy where id_filmu = $id');
+        $sedacky = [];
+        $dbSedacky = $this->db->query('SELECT * FROM vaiiko.kinosala');
 
-        foreach ($dbFilmy as $film) {
-            $filmy[] = new Film($film['id_filmu'], $film['info'], $film['obsah']);
+        foreach ($dbSedacky as $sedacka) {
+            $sedacky[] = new Sedacky($sedacka['id'], $sedacka['id_sedadla']);
         }
 
-        return $filmy;
+        return $sedacky;
     }
 
-    function Delete(Film $film)
+    function Delete(Sedacky $sedacky)
     {
-        $id=$film->getId();
-        $sql='DELETE FROM vaiiko.filmy where id_filmu='.$id;
-
+        $id=$sedacky->getId();
+        $sql= 'DELETE FROM vaiiko.kinosala where id=' .$id;
         $this->db->query($sql);
     }
+
+
+
+
+
+
 }
