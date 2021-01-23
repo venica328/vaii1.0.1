@@ -46,6 +46,11 @@ class DBKinosala
         $this->db->query($sql);
     }
 
+    function KupStolicku(Sedacky $sedacky){
+        //vkladat id sedadla
+        //cez save ulozit
+    }
+
 
 
 

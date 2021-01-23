@@ -1,8 +1,8 @@
 <?php
-
-include 'Models/Komentar.php';
-include 'Controlers/DBKomentare.php';
+include '../Models/Komentar.php';
+include '../Controlers/DBKomentare.php';
 session_start();
+
 if (isset($_REQUEST['logout'])) {
     $_SESSION["id"] = -1;
     $_SESSION["username"] = "";
@@ -13,12 +13,9 @@ if (isset($_REQUEST['logout'])) {
 <html lang="en">
 
 <head>
-    <?php
-    include "Head.php";
-    ?>
-    <link rel="stylesheet" href="CSS/Ohlasy.css">
-
-    <title>HOME</title>
+    <?php include "Components/Head.php";?>
+    <link rel="stylesheet" href="../CSS/Ohlasy.css">
+    <title>KOMENTÁRE</title>
 </head>
 
 <body>
@@ -27,12 +24,9 @@ if (isset($_REQUEST['logout'])) {
 <div id="right"></div>
 
 <?php
-include "Navbar.php";
-show_navbar(1);
-?>
-
-<?php
-include "NavbarDays.php"
+include "Components/Navbar.php";
+show_navbar();
+include "Components/NavbarDays.php"
 ?>
 <?php
 
@@ -78,19 +72,15 @@ if(isset($_GET["delete"])) {
 
 
 <?php
-include "scrollButton.php"
-?>
-
-<?php
-include "Footer.php"
+include "Components/scrollButton.php";
+include "Components/Footer.php";
 ?>
 
 
-<script src="Assets/js/scrollFunction.js"></script>
-<script src="Assets/js/Example.js"></script>
-<script src="Assets/js/Example2.js"></script>
-<script src="Assets/js/displayFunction.js"></script>
-<script src="Assets/js/ohlasy.js"></script>
+<script src="../Assets/js/scrollFunction.js"></script>
+<script src="../Assets/js/Example.js"></script>
+<script src="../Assets/js/Example2.js"></script>
+<script src="../Assets/js/displayFunction.js"></script>
 
 </body>
 </html>

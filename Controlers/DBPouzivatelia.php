@@ -16,7 +16,6 @@ class DBPouzivatelia
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
-
     }
 
     function Save(Pouzivatel $pouzivatel)
@@ -32,15 +31,14 @@ class DBPouzivatelia
         $dbPouzivatelia = $this->db->query('SELECT * FROM vaiiko.pouzivatelia');
 
         foreach ($dbPouzivatelia as $pouzivatel) {
-            $pouzivatelia[] = new Pouzivatel($pouzivatel['id_pouzivatela'], $pouzivatel['username'], $pouzivatel['password'], $pouzivatel['isAdmin']);
+            $pouzivatelia[] = new Pouzivatel($pouzivatel['id_pouzivatela'],$pouzivatel['username'], $pouzivatel['password'], $pouzivatel['isAdmin']);
         }
 
         return $pouzivatelia;
     }
 
-    function Delete(Pouzivatel $pouzivatel)
+    function Delete($id)
     {
-        $id = $pouzivatel->getIdPouzivatela();
         $sql = 'DELETE FROM vaiiko.pouzivatelia where id_pouzivatela=' . $id;
         $this->db->query($sql);
     }
@@ -48,10 +46,8 @@ class DBPouzivatelia
     public function Login($username, $password)
     {
         $result = $this->Load();
-
-        $password = md5($password);
         foreach ($result as $pouzivatel) {
-            if ($username == $pouzivatel->getUsername() && $password == $pouzivatel->getPassword()) {
+            if ($username == $pouzivatel->getUsername() && password_verify($password, $pouzivatel->getPassword())) {
                 $_SESSION["isAdmin"] = $pouzivatel->getIsAdmin();
                 $_SESSION["username"] = $pouzivatel->getUsername();
                 $_SESSION["id"] = $pouzivatel->getIdPouzivatela();
@@ -60,4 +56,23 @@ class DBPouzivatelia
         }
         return false;
     }
+
+    public function Register($username, $password, $password_again)
+    {
+        $result = $this->Load();
+        foreach ($result as $pouzivatel) {
+            if($pouzivatel->getUsername() == $username) {
+                return -1;
+            }
+        }
+        if($password == $password_again && strlen($password) >= 8) {
+            $hash_variable_salt = password_hash($password, PASSWORD_DEFAULT, array('cost' => 9));
+            $pouzivatel = new Pouzivatel(0, $username, $hash_variable_salt, '0');
+            $this->Save($pouzivatel);
+            return 0;
+        } else {
+            return -2;
+        }
+    }
+
 }

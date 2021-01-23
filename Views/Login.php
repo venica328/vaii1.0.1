@@ -7,7 +7,7 @@ include "../Controlers/DBPouzivatelia.php";
 <html lang="sk">
 
 <head>
-    <?php include "../Head.php"; ?>
+    <?php include "Components/Head.php"; ?>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/Login.css">
     <title>Prihlásenie</title>
@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($storage->Login($username, $password)) {
         header('Location: ../index.php');
         exit;
+
     } else {
         $message = "Zadali ste nesprávne meno alebo heslo!";
         echo "<script type='text/javascript'>alert('$message');</script>";
@@ -43,8 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                            required></div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit" style="background-color: lightseagreen;">
-                    Prihláste sa ako admin!
+                    Prihláste sa!
                 </button>
+            </div>
+            <div style="text-align: right; position: initial;">
+                <a href="Register.php">Nie ste zargistrovaný?</a>
             </div>
             <a href="../index.php">HOME</a>
     </div>

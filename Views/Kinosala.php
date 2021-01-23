@@ -2,8 +2,8 @@
 $_SERVER["SERVER_NAME"]="localhost";
 session_start();
 
-include_once "database.php";
-include_once "Film.php";
+include_once "../database.php";
+include_once "../Models/Film.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,20 +11,11 @@ include_once "Film.php";
 
 <head>
 
-    <meta charset="UTF-8">
-
+    <?php include "Components/Head.php"; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/Navbar.css">
-    <link rel="stylesheet" href="CSS/Background.css">
-    <link rel="stylesheet" href="CSS/Card.css">
-    <link rel="stylesheet" href="CSS/scrollButton.css">
-    <link rel="stylesheet" href="CSS/BuyTickets.css">
-    <link rel="stylesheet" href="CSS/NavbarDays.css">
-    <link rel="stylesheet" href="CSS/Footer-Dark.css">
-    <link rel="stylesheet" href="CSS/Sedacky.css">
-    <link rel="stylesheet" href="CSS/modal.css">
+    <link rel="stylesheet" href="../CSS/Sedacky.css">
+    <link rel="stylesheet" href="../CSS/modal.css">
 
     <title>KINOSÁLA</title>
 </head>
@@ -35,24 +26,12 @@ include_once "Film.php";
 <div id="right"></div>
 
 <?php
-include "Navbar.php";
-show_navbar(1);
-?>
-
-<?php
-include "NavbarDays.php"
-?>
-
-<?php
-include "Sedenie.php"
-?>
-
-<?php
-include "scrollButton.php"
-?>
-
-<?php
-include "Footer.php"
+include "Components/Navbar.php";
+show_navbar();
+include "Components/NavbarDays.php";
+include "Components/Sedenie.php";
+include "Components/scrollButton.php";
+include "Components/Footer.php";
 ?>
 
 <?php
@@ -63,13 +42,13 @@ function getInfo($id) {
 
     foreach ($dbInfos as $info) {
         if($info['id_filmu'] == $id) {
-            $infos[] = new Informacia($info['info'], $info['obsah']);
+            $infos[] = new Film($info['id_filmu'],$info['info'], $info['obsah'], $info['obrazok']);
         }
     }
 
     disconnectDB($db);
     if(empty($infos)) {
-        $infos[] = new Informacia('','');
+        $infos[] = new Film('','','','');
     }
 
     return $infos[0];
@@ -140,11 +119,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<script src="Assets/js/scrollFunction.js"></script>
-<script src="Assets/js/Example.js"></script>
-<script src="Assets/js/Example2.js"></script>
-<script src="Assets/js/displayFunction.js"></script>
-<script src="Assets/js/kinosala.js"></script>
+<script src="../Assets/js/scrollFunction.js"></script>
+<script src="../Assets/js/Example.js"></script>
+<script src="../Assets/js/Example2.js"></script>
+<script src="../Assets/js/displayFunction.js"></script>
+<script src="../Assets/js/kinosala.js"></script>
 <script> var stolicky=<?php echo getStolicka($_GET['id_filmu']); ?>;</script>
 
 </body>

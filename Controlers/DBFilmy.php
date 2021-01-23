@@ -61,7 +61,7 @@ class DBFilmy
     function Update(Film $film) {
 
         $id=$film->getIdFilmu();
-        $sql= 'UPDATE vaiiko.filmy SET info = NULL, obsah = NULL where id_filmu=' .$id;
+        $sql= 'UPDATE vaiiko.filmy SET info = info , obsah where id_filmu=' .$id;
         $this->db->query($sql);
 
     }

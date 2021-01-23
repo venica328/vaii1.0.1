@@ -2,16 +2,13 @@
 session_start();
 if (isset($_REQUEST['logout'])) {
     $_SESSION["id"] = -1;
+    $_SESSION["isAdmin"] = -1;
     $_SESSION["username"] = "";
 }
 
-if (isset($_REQUEST['edit'])) {
-    $_SESSION["id"] = -1;
-    $_SESSION["username"] = "";
-}
-include_once "database.php";
-include "Cards.php";
-
+include "Views/Components/Cards.php";
+include "Controlers/DBFilmy.php";
+include "Models/Film.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +17,7 @@ include "Cards.php";
 <head>
 
     <?php
-    include "Head.php";
+    include "Views/Components/Head.php";
     ?>
 
     <title>HOME</title>
@@ -35,9 +32,9 @@ include "Cards.php";
 
 
 <?php
-include "Navbar.php";
-show_navbar(1);
-include "NavbarDays.php"
+include "Views/Components/Navbar.php";
+show_navbar();
+include "Views/Components/NavbarDays.php"
 ?>
 
 <div class="cards">
@@ -59,8 +56,8 @@ include "NavbarDays.php"
 </div>
 
 <?php
-include "scrollButton.php";
-include "Footer.php";
+include "Views/Components/scrollButton.php";
+include "Views/Components/Footer.php";
 ?>
 
 

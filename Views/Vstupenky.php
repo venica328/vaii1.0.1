@@ -11,13 +11,13 @@ session_start();
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/Navbar.css">
-    <link rel="stylesheet" href="CSS/Background.css">
-    <link rel="stylesheet" href="CSS/Card.css">
-    <link rel="stylesheet" href="CSS/scrollButton.css">
-    <link rel="stylesheet" href="CSS/NavbarDays.css">
-    <link rel="stylesheet" href="CSS/Footer-Dark.css">
-    <link rel="stylesheet" href="CSS/Vstupenky.css">
+    <link rel="stylesheet" href="../CSS/Navbar.css">
+    <link rel="stylesheet" href="../CSS/Background.css">
+    <link rel="stylesheet" href="../CSS/Card.css">
+    <link rel="stylesheet" href="../CSS/scrollButton.css">
+    <link rel="stylesheet" href="../CSS/NavbarDays.css">
+    <link rel="stylesheet" href="../CSS/Footer-Dark.css">
+    <link rel="stylesheet" href="../CSS/Vstupenky.css">
     <title>VSTUPENKY</title>
 </head>
 
@@ -28,12 +28,12 @@ session_start();
 <div id="right"></div>
 
 <?php
-include "Navbar.php";
-show_navbar(1);
+include "Components/Navbar.php";
+show_navbar();
 ?>
 
 <?php
-include "NavbarDays.php"
+include "Components/NavbarDays.php"
 ?>
 
 <?php
@@ -63,17 +63,17 @@ echo '
 ?>
 
 <?php
-include "scrollButton.php"
+include "Components/scrollButton.php"
 ?>
 
 <?php
-include "Footer.php"
+include "Components/Footer.php"
 ?>
 
 
-<script src="Assets/js/scrollFunction.js"></script>
-<script src="Assets/js/Example.js"></script>
-<script src="Assets/js/Example2.js"></script>
+<script src="../Assets/js/scrollFunction.js"></script>
+<script src="../Assets/js/Example.js"></script>
+<script src="../Assets/js/Example2.js"></script>
 
 
 
