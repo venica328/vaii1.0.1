@@ -50,18 +50,15 @@ class DBFilmy
         return $filmy[0];
     }
 
-    function Delete(Film $film)
+    function Delete($id)
     {
-        $id=$film->getIdFilmu();
-        $sql='DELETE FROM vaiiko.filmy where id_filmu='.$id;
-
+        $sql='DELETE FROM vaiiko.filmy where id_filmu=' .$id;
         $this->db->query($sql);
     }
 
     function Update(Film $film) {
 
-        $id=$film->getIdFilmu();
-        $sql= 'UPDATE vaiiko.filmy SET info = info , obsah where id_filmu=' .$id;
+        $sql= 'UPDATE vaiiko.filmy SET info = "'.$film->getInfo().'" , obsah = "'.$film->getObsah().'", obrazok = "'.$film->getObrazok().'" where id_filmu=' .$film->getIdFilmu();
         $this->db->query($sql);
 
     }

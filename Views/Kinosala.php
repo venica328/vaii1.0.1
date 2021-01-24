@@ -2,7 +2,6 @@
 $_SERVER["SERVER_NAME"]="localhost";
 session_start();
 
-include_once "../database.php";
 include_once "../Models/Film.php";
 ?>
 
@@ -35,27 +34,11 @@ include "Components/Footer.php";
 ?>
 
 <?php
-function getInfo($id) {
-    $db = connectDB();
-
-    $dbInfos = $db->query('SELECT * FROM vaiiko.filmy');
-
-    foreach ($dbInfos as $info) {
-        if($info['id_filmu'] == $id) {
-            $infos[] = new Film($info['id_filmu'],$info['info'], $info['obsah'], $info['obrazok']);
-        }
-    }
-
-    disconnectDB($db);
-    if(empty($infos)) {
-        $infos[] = new Film('','','','');
-    }
-
-    return $infos[0];
-
-}
+$storageStolicka = new DBKinosala();
+$storageFilm = new DBFilmy();
 
 function getStolicka($id) {
+
     $db = connectDB();
 
     $dbInfos = $db->query('SELECT id_sedadla FROM vaiiko.`kinosala` where id_filmu='.$id.'');
@@ -77,7 +60,10 @@ function test_input($data) {
     return $data;
 }
 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $db = connectDB();
     $id_sedadla = test_input($_POST["id_sedadla"]);
     $id_filmu = test_input($_POST["id_filmu"]);
@@ -98,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>nazov: <?php echo $info->getInfo() ?></h2>
+            <h2>nazov: <?php echo $storageFilm->Load($_GET["id_filmu"]) ?></h2>
         </div>
         <div class="modal-body">
             <p>Objednávate si stoličku s číslom: </p>

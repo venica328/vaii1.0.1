@@ -51,6 +51,17 @@ class DBKinosala
         //cez save ulozit
     }
 
+    function LoadStolickaPreFilm($id) {
+        $stolicky = [];
+        $dbStolicky = $this->db->query('SELECT * FROM vaiiko.filmy where id_filmu ='. $id);
+
+        foreach ($dbStolicky as $stolicka) {
+            $stolicky[] = new Sedacky($stolicka['id'], $stolicka['id_sedadla'], $stolicka['id_filmu'], $stolicka['id_pouzivatela']);
+        }
+
+        return $stolicky;
+    }
+
 
 
 

@@ -12,7 +12,6 @@ include "../Models/Film.php";
 <html lang="sk">
 <head>
 
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Editovanie</title>
@@ -29,29 +28,42 @@ include "../Models/Film.php";
 <?php
 $storage = new DBFilmy();
 $film = $storage->Load($_GET["id_filmu"]);
-if(isset($_GET["submit"])) {
-    $nove = new Film($_GET["id_filmu"],$_POST["info"], $_POST["obsah"], $film->getObrazok());
-    $storage->Update($nove);
 
+if (isset($_POST["info"]) && isset($_POST["obsah"])) {
+    $filename = $_FILES['uploadfile']['name'];
+    $filetmpname = $_FILES['uploadfile']['tmp_name'];
+//folder where images will be uploaded
+    $folder = '../Images/';
+//function for saving the uploaded images in a specific folder
+    move_uploaded_file($filetmpname, $folder . $filename);
+
+    $nove = new Film($_GET["id_filmu"], $_POST["info"], $_POST["obsah"], $filename);
+    $storage->Update($nove);
+    $film = $storage->Load($_GET["id_filmu"]);
 }
+
+
 
 ?>
 
 <div class="register-photo" style="background: purple;">
     <div class="form-container">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+        <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
         echo '?id_filmu=' . $_GET["id_filmu"] ?>">
+            <label for="nazov">Názov filmu:</label>
             <div class="form-group"><input class="form-control"
                                            style="height: 50px; background: #e7e3e8;"
-                                           type="text" name="info" placeholder="Názov filmu"
+                                           type="text" name="info"
                                            value="<?php echo $film->getInfo() ?>">
             </div>
-
+            <label for="obsah">Obsah filmu:</label>
             <div class="form-group"><textarea class="form-control"
                                               style="padding: 5% 0% 30% 2%; background: #e7e3e8;" type="text"
                                               name="obsah"
-                                              placeholder="Obsah filmu">Obsah filmu: <?php echo $film->getObsah() ?>  </textarea>
+                                              placeholder="Obsah filmu"><?php echo $film->getObsah() ?></textarea>
             </div>
+            <label for="obrazok">Obrázok:</label>
+            <div><input type="file" name="uploadfile"/></div>
 
             <div class="form-group"><input class="form-control"
                                            style="padding: 5% 0% 30% 2%; background: #e7e3e8;"
@@ -59,7 +71,7 @@ if(isset($_GET["submit"])) {
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary btn-block" onclick="alertAdd()" type="submit" name="submit"
+                <button class="btn btn-primary btn-block" onclick="alertAdd()" type="submit" name="submit" value="upload"
                         style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">
                     UPLOAD!
                 </button>

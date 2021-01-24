@@ -14,7 +14,6 @@ function show_edit($film)
                     <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
                         <a style="text-align: right; padding: 2px 30px;" href="Views/Edit.php?id_filmu=' . $film->getIdFilmu() . '">EDITOVANIE</a>
-                        <a style="text-align: right; padding: 2px 30px;" href="Image.php?id_filmu=' . $film->getIdFilmu() . '">OBRÁZOK</a>
                         <form method="post">
                         </form>
                     </div>
@@ -28,7 +27,6 @@ function show_edit($film)
                     <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
                         <a style="text-align: right; padding: 2px 30px;" href="Views/Edit.php?id_filmu=' . $film->getIdFilmu() . '">EDITOVANIE</a>
-                        <a style="text-align: right; padding: 2px 30px;" href="Image.php?id_filmu=' . $film->getIdFilmu() . '">OBRÁZOK</a>
                         <form method="post">
                           <a onclick="alertDelete()" style="text-align: right; padding: 2px 30px;" href="../index.php?delete=' . $film->getIdFilmu() . '">DELETE</a>
                         </form>

@@ -38,8 +38,10 @@ include "Views/Components/NavbarDays.php"
 ?>
 
 <div class="cards">
+
     <?php
     $storage = new DBFilmy();
+
     foreach ($storage->LoadAll() as $film) { ?>
         <div class="container">
             <div class="card1" style=' background-image: url("Images/<?php echo $film->getObrazok(); ?>"); '>
