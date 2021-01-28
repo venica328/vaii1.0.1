@@ -3,7 +3,6 @@ if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1) {
     session_start();
 }
 
-include "Components/Cards.php";
 include "../Controlers/DBFilmy.php";
 include "../Models/Film.php";
 ?>
@@ -27,21 +26,34 @@ include "../Models/Film.php";
 
 <?php
 $storage = new DBFilmy();
-$film = $storage->Load($_GET["id_filmu"]);
-
-if (isset($_POST["info"]) && isset($_POST["obsah"])) {
-    $filename = $_FILES['uploadfile']['name'];
-    $filetmpname = $_FILES['uploadfile']['tmp_name'];
-//folder where images will be uploaded
-    $folder = '../Images/';
-//function for saving the uploaded images in a specific folder
-    move_uploaded_file($filetmpname, $folder . $filename);
-
-    $nove = new Film($_GET["id_filmu"], $_POST["info"], $_POST["obsah"], $filename);
-    $storage->Update($nove);
+if(isset($_GET["id_filmu"])) {
     $film = $storage->Load($_GET["id_filmu"]);
-}
 
+    if (isset($_POST["info"]) && isset($_POST["obsah"])) {
+        $filename = $_FILES['uploadfile']['name'];
+        $filetmpname = $_FILES['uploadfile']['tmp_name'];
+//folder where images will be uploaded
+        $folder = '../Images';
+//function for saving the uploaded images in a specific folder
+        move_uploaded_file($filetmpname, $folder . $filename);
+
+        $nove = new Film($_GET["id_filmu"], $_POST["info"], $_POST["obsah"], $filename);
+        $storage->Update($nove);
+        $film = $nove;
+    }
+} else {
+    $film=new Film('','','','');
+    if (isset($_POST["info"]) && isset($_POST["obsah"])) {
+        $filename = $_FILES['uploadfile']['name'];
+        $filetmpname = $_FILES['uploadfile']['tmp_name'];
+        $folder = '../Images/';
+        move_uploaded_file($filetmpname, $folder . $filename);
+
+        $nove = new Film(0, $_POST["info"], $_POST["obsah"], $filename);
+        $storage->Save($nove);
+        $film = $nove;
+    }
+}
 
 
 ?>
@@ -49,7 +61,7 @@ if (isset($_POST["info"]) && isset($_POST["obsah"])) {
 <div class="register-photo" style="background: purple;">
     <div class="form-container">
         <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
-        echo '?id_filmu=' . $_GET["id_filmu"] ?>">
+        echo '?id_filmu=' . $film->getIdFilmu() ?>">
             <label for="nazov">Názov filmu:</label>
             <div class="form-group"><input class="form-control"
                                            style="height: 50px; background: #e7e3e8;"
@@ -67,7 +79,7 @@ if (isset($_POST["info"]) && isset($_POST["obsah"])) {
 
             <div class="form-group"><input class="form-control"
                                            style="padding: 5% 0% 30% 2%; background: #e7e3e8;"
-                                           type="hidden" name="id_filmu" value="<?php echo($_GET["id_filmu"]); ?>">
+                                           type="hidden" name="id_filmu" value="<?php echo $film->getIdFilmu() ?>">
             </div>
 
             <div class="form-group">

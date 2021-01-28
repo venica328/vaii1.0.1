@@ -5164,6 +5164,7 @@
       <ColNames>id_filmu</ColNames>
       <RefTableName>filmy</RefTableName>
       <RefColNames>id_filmu</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="1235" parent="417" name="kinosala_pouzivatelia_id_pouzivatela_fk">
       <ColNames>id_pouzivatela</ColNames>

@@ -7,8 +7,8 @@ if (isset($_REQUEST['logout'])) {
 }
 
 include "Views/Components/Cards.php";
-include "Controlers/DBFilmy.php";
 include "Models/Film.php";
+
 ?>
 
 <!DOCTYPE html>

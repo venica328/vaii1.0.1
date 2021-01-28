@@ -1,8 +1,18 @@
 <?php
 
+include "Controlers/DBFilmy.php";
+
+
+if(isset($_GET["delete"])) {
+    $storage = new DBFilmy();
+    $storage->Delete($_GET["delete"]);
+}
+
 function show_edit($film)
 {
+
     if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1) {
+
         echo '
                     <p>' . $film->getInfo() . '</p>
                     <p>' . $film->getObsah() . '</p>         

@@ -3,6 +3,8 @@ $_SERVER["SERVER_NAME"]="localhost";
 session_start();
 
 include_once "../Models/Film.php";
+include "../Controlers/DBKinosala.php";
+include "../Controlers/DBFilmy.php";
 ?>
 
 <!DOCTYPE html>
@@ -37,39 +39,10 @@ include "Components/Footer.php";
 $storageStolicka = new DBKinosala();
 $storageFilm = new DBFilmy();
 
-function getStolicka($id) {
-
-    $db = connectDB();
-
-    $dbInfos = $db->query('SELECT id_sedadla FROM vaiiko.`kinosala` where id_filmu='.$id.'');
-    foreach ($dbInfos as $info) {
-        $infos[] = $info["id_sedadla"];
-
-    }
-    disconnectDB($db);
-    $stolicky=json_encode($infos);
-    return $stolicky;
-}
-
-$info=getInfo($_GET['id_filmu']);
-
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $db = connectDB();
-    $id_sedadla = test_input($_POST["id_sedadla"]);
-    $id_filmu = test_input($_POST["id_filmu"]);
-    $sql = 'INSERT INTO vaiiko.kinosala (id_filmu,id_sedadla) VALUES ('.$id_filmu.', '.$id_sedadla.')';
-    $db->query($sql);
-    disconnectDB($db);
+    $sedacky = new Sedacky('', $_POST["id_sedadla"], $_POST["id_filmu"], $_SESSION["id"]);
+    $storageStolicka->Save($sedacky);
 }
 
 
@@ -102,15 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </div>
 
-
-
-
 <script src="../Assets/js/scrollFunction.js"></script>
 <script src="../Assets/js/Example.js"></script>
 <script src="../Assets/js/Example2.js"></script>
 <script src="../Assets/js/displayFunction.js"></script>
 <script src="../Assets/js/kinosala.js"></script>
-<script> var stolicky=<?php echo getStolicka($_GET['id_filmu']); ?>;</script>
+<script> var stolicky=<?php echo $storageStolicka->LoadStolickaPreFilm($_GET['id_filmu']); ?>;</script>
 
 </body>
 </html>

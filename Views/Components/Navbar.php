@@ -17,6 +17,7 @@ function show_navbar()
         </div>
         
     </div>
+    <a href="../../Views/Edit.php">Pridať film!</a>
     <a href="/index.php?logout">Log out</a>
     
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
