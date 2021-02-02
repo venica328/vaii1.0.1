@@ -33,7 +33,7 @@ if(isset($_GET["id_filmu"])) {
         $filename = $_FILES['uploadfile']['name'];
         $filetmpname = $_FILES['uploadfile']['tmp_name'];
 //folder where images will be uploaded
-        $folder = '../Images';
+        $folder = '../../Images';
 //function for saving the uploaded images in a specific folder
         move_uploaded_file($filetmpname, $folder . $filename);
 

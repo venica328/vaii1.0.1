@@ -1,5 +1,5 @@
 <?php
-$_SERVER["SERVER_NAME"]="localhost";
+$_SERVER["SERVER_NAME"] = "localhost";
 session_start();
 
 include_once "../Models/Film.php";
@@ -17,6 +17,7 @@ include "../Controlers/DBFilmy.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/Sedacky.css">
     <link rel="stylesheet" href="../CSS/modal.css">
+
 
     <title>KINOSÁLA</title>
 </head>
@@ -45,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $storageStolicka->Save($sedacky);
 }
 
-
 ?>
 
 
@@ -57,30 +57,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>nazov: <?php echo $storageFilm->Load($_GET["id_filmu"]) ?></h2>
+            <h2>nazov: <?php echo $storageFilm->Load($_GET["id_filmu"])->getInfo(); ?></h2>
         </div>
         <div class="modal-body">
             <p>Objednávate si stoličku s číslom: </p>
             <div id="stolicka"></div>
         </div>
+
         <div class="modal-footer">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); echo'?id_filmu='.$_GET["id_filmu"] ?>">
-                <input type="hidden" name="id_filmu" value="<?php echo ($_GET["id_filmu"]); ?>">
+            <form method="post" id="form_nakup" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+            echo '?id_filmu=' . $_GET["id_filmu"] ?>">
+                <input type="hidden" name="id_filmu" value="<?php echo($_GET["id_filmu"]); ?>">
                 <input type="hidden" id="id_sedadla" name="id_sedadla">
                 <button class="submitButton" type="submit"
-                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">POTVRDIŤ!</button>
+                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">
+                    POTVRDIŤ!
+                </button>
             </form>
         </div>
     </div>
-
 </div>
-
 <script src="../Assets/js/scrollFunction.js"></script>
 <script src="../Assets/js/Example.js"></script>
 <script src="../Assets/js/Example2.js"></script>
 <script src="../Assets/js/displayFunction.js"></script>
 <script src="../Assets/js/kinosala.js"></script>
-<script> var stolicky=<?php echo $storageStolicka->LoadStolickaPreFilm($_GET['id_filmu']); ?>;</script>
+<script> var stolicky =<?php echo json_encode($storageStolicka->LoadStolickaPreFilm($_GET['id_filmu'])); ?>;</script>
 
 </body>
 </html>

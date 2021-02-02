@@ -19,14 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="Funkcny edit formular a vkope je pridanie nazvu, obsahu aj obrazka cez jednu databazu...v edit formulari je pridanie aj label aby sa vedelo co kam pisat. Odstranenie starych suborov ako database.php pretoze to bolo pre stare pristupovanie k databaze a teraz to je cele prerobene cez obejkty.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0427a834-8161-4cf6-9520-b5c81e582601.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0427a834-8161-4cf6-9520-b5c81e582601.xml" afterDir="false" />
+    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="prerobena kinosala na novy sposob  a doplnene filmy kde entita moze mazat pridavat a aj editovat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Components/Cards.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Components/Cards.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Components/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Components/Navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/kinosala.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/kinosala.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlers/DBKinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBKinosala.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Sedacky.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sedacky.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Kinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Kinosala.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +132,8 @@
       <workItem from="1611426605670" duration="11191000" />
       <workItem from="1611512823834" duration="5345000" />
       <workItem from="1611518761040" duration="961000" />
-      <workItem from="1611859474534" duration="3543000" />
+      <workItem from="1611859474534" duration="3640000" />
+      <workItem from="1612291449287" duration="5030000" />
     </task>
     <task id="LOCAL-00001" summary="last change">
       <created>1606173753829</created>
@@ -198,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611518101380</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="prerobena kinosala na novy sposob  a doplnene filmy kde entita moze mazat pridavat a aj editovat">
+      <created>1611863105929</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611863105929</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +233,8 @@
     <MESSAGE value="Pridanie zloziek architektury aby bolo prehladnejsie, zlucenie obrazkov a pridanie do databazy filmy. Znovuspojazdnenie index, login... Vytvorenie samostatnej triedy Head ktora obsahuje includnute styly, ktore sa inkluduju vkope pre nevzniknutie duplicit." />
     <MESSAGE value="Spojazdnena architektura do finalnej podoby, nacitanie filmov z funkcii." />
     <MESSAGE value="Funkcny edit formular a vkope je pridanie nazvu, obsahu aj obrazka cez jednu databazu...v edit formulari je pridanie aj label aby sa vedelo co kam pisat. Odstranenie starych suborov ako database.php pretoze to bolo pre stare pristupovanie k databaze a teraz to je cele prerobene cez obejkty." />
-    <option name="LAST_COMMIT_MESSAGE" value="Funkcny edit formular a vkope je pridanie nazvu, obsahu aj obrazka cez jednu databazu...v edit formulari je pridanie aj label aby sa vedelo co kam pisat. Odstranenie starych suborov ako database.php pretoze to bolo pre stare pristupovanie k databaze a teraz to je cele prerobene cez obejkty." />
+    <MESSAGE value="prerobena kinosala na novy sposob  a doplnene filmy kde entita moze mazat pridavat a aj editovat" />
+    <option name="LAST_COMMIT_MESSAGE" value="prerobena kinosala na novy sposob  a doplnene filmy kde entita moze mazat pridavat a aj editovat" />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="67" key="#CLI_Interpreters" timestamp="1606158962028">
@@ -277,54 +285,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1605824315473" />
-    <state width="1493" height="260" key="GridCell.Tab.0.bottom" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.0.bottom" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.0.center" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.0.center" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.0.left" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.0.left" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.0.right" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.0.right" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.1.bottom" timestamp="1612295450647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450647" />
+    <state width="941" height="224" key="GridCell.Tab.1.center" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.1.left" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.1.right" timestamp="1612295450646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.2.bottom" timestamp="1611861596211">
+    <state width="941" height="224" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450646" />
+    <state width="941" height="224" key="GridCell.Tab.2.bottom" timestamp="1612295450647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596211" />
-    <state width="1493" height="260" key="GridCell.Tab.2.center" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450647" />
+    <state width="941" height="224" key="GridCell.Tab.2.center" timestamp="1612295450647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.2.left" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450647" />
+    <state width="941" height="224" key="GridCell.Tab.2.left" timestamp="1612295450647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
-    <state width="1493" height="260" key="GridCell.Tab.2.right" timestamp="1611861596210">
+    <state width="941" height="224" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450647" />
+    <state width="941" height="224" key="GridCell.Tab.2.right" timestamp="1612295450647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861596210" />
+    <state width="941" height="224" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612295450647" />
     <state x="588" y="135" key="NewPhpClassDialog" timestamp="1611080156624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -341,10 +349,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1605787907737" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611518104035">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611863107864">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611518104035" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611863107864" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610958983038" />
     <state x="668" y="289" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605727085480">
       <screen x="0" y="0" width="1536" height="824" />

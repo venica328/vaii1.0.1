@@ -1,7 +1,7 @@
 <?php
 
 
-class Sedacky
+class Sedacky implements \JsonSerializable
 {
     private $id;
     private $id_sedadla;
@@ -78,5 +78,10 @@ class Sedacky
     public function setIdPouzivatela($id_pouzivatela): void
     {
         $this->id_pouzivatela = $id_pouzivatela;
+    }
+
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
     }
 }
