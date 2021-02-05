@@ -26,14 +26,14 @@ include "../Models/Film.php";
 
 <?php
 $storage = new DBFilmy();
-if(isset($_GET["id_filmu"])) {
+if(isset($_GET["id_filmu"]) && $_GET["id_filmu"] != '') {
     $film = $storage->Load($_GET["id_filmu"]);
 
     if (isset($_POST["info"]) && isset($_POST["obsah"])) {
         $filename = $_FILES['uploadfile']['name'];
         $filetmpname = $_FILES['uploadfile']['tmp_name'];
 //folder where images will be uploaded
-        $folder = '../../Images';
+        $folder = '/Images';
 //function for saving the uploaded images in a specific folder
         move_uploaded_file($filetmpname, $folder . $filename);
 
@@ -72,7 +72,7 @@ if(isset($_GET["id_filmu"])) {
             <div class="form-group"><textarea class="form-control"
                                               style="padding: 5% 0% 30% 2%; background: #e7e3e8;" type="text"
                                               name="obsah"
-                                              placeholder="Obsah filmu"><?php echo $film->getObsah() ?></textarea>
+                                              placeholder=""><?php echo $film->getObsah() ?></textarea>
             </div>
             <label for="obrazok">Obrázok:</label>
             <div><input type="file" name="uploadfile"/></div>

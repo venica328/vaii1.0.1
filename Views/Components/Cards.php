@@ -17,20 +17,6 @@ function show_edit($film)
                     <p>' . $film->getInfo() . '</p>
                     <p>' . $film->getObsah() . '</p>         
                 ';
-
-        if ($film->getInfo() == '' or $film->getObsah() == '') {
-            echo '<div class="navbarCards">
-                  <div class="dropdown">
-                    <button class="dropButton">SPRAVUJ <i class="fa fa-caret-down"></i></button>
-                    <div class="dropdown-content">
-                        <a style="text-align: right; padding: 2px 30px;" href="Views/Edit.php?id_filmu=' . $film->getIdFilmu() . '">EDITOVANIE</a>
-                        <form method="post">
-                        </form>
-                    </div>
-                  </div>
-              </div>
-                ';
-        } else {
             echo '
               <div class="navbarCards">
                   <div class="dropdown">
@@ -45,7 +31,7 @@ function show_edit($film)
               </div>
                 
               ';
-        }
+
     } elseif (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
         echo '
                     <p>' . $film->getInfo() . '</p>

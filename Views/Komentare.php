@@ -47,7 +47,7 @@ if(isset($_GET["delete"])) {
     <?php foreach ($storage->Load() as $komentar) { ?>
 
         <div class="message">
-            <?php if (!(!isset($_SESSION["id"]) || $_SESSION["id"] == -1)) {
+            <?php if ($_SESSION["isAdmin"] == 1) {
                 echo '<a href="?delete='.$komentar->getId().'">x</a>';
             }
             ?>

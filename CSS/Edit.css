@@ -13,7 +13,7 @@
 
 .register-photo form {
     display: table-cell;
-    width: 1000px;
+    width: 100%;
     background-color: #ffffff;
     padding: 40px 60px;
     color: #505e6c;

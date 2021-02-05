@@ -40,16 +40,10 @@ class DBKinosala
         return $sedacky;
     }
 
-    function Delete(Sedacky $sedacky)
+    function Delete($id_filmu)
     {
-        $id=$sedacky->getId();
-        $sql= 'DELETE FROM vaiiko.kinosala where id=' .$id;
+        $sql= 'DELETE FROM vaiiko.kinosala where id_filmu=' .$id_filmu;
         $this->db->query($sql);
-    }
-
-    function KupStolicku(Sedacky $sedacky){
-        //vkladat id sedadla
-        //cez save ulozit
     }
 
     function LoadStolickaPreFilm($id) {

@@ -6,7 +6,7 @@ function validateForm() {
         return false;
     }
     if(x !== y) {
-        alert("Hesla sa nezhoduju!");
+        alert("Hesla sa nezhodujú!");
         return false;
     }
     console.log(x);

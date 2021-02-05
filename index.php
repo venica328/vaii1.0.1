@@ -16,10 +16,7 @@ include "Models/Film.php";
 
 <head>
 
-    <?php
-    include "Views/Components/Head.php";
-    ?>
-
+    <?php include "Views/Components/Head.php";?>
     <title>HOME</title>
 
 </head>
@@ -32,9 +29,7 @@ include "Models/Film.php";
 
 
 <?php
-include "Views/Components/Navbar.php";
-show_navbar();
-include "Views/Components/NavbarDays.php"
+include "Views/Components/Body.php";
 ?>
 
 <div class="cards">
@@ -57,11 +52,8 @@ include "Views/Components/NavbarDays.php"
     <?php } ?>
 </div>
 
-<?php
-include "Views/Components/scrollButton.php";
-include "Views/Components/Footer.php";
-?>
 
+<?php include "Views/Components/Footer.php";?>
 
 <script src="Assets/js/scrollFunction.js"></script>
 <script src="Assets/js/Example.js"></script>

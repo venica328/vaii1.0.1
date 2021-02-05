@@ -19,12 +19,6 @@
     text-transform: uppercase;
 }
 
-.navbarDays a:hover {
-    background-color: white;
-    color: lightseagreen;
-
-}
-
 .navbarDays .icon {
     display: none;
 }

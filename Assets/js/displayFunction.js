@@ -15,6 +15,4 @@ function alertAdd() {
     alert("Pridali ste dáta!")
 }
 
-function alertImage() {
-    alert("Pridali ste obrázok!")
-}
+

@@ -34,6 +34,7 @@ include "Components/NavbarDays.php";
 include "Components/Sedenie.php";
 include "Components/scrollButton.php";
 include "Components/Footer.php";
+
 ?>
 
 <?php
@@ -69,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '?id_filmu=' . $_GET["id_filmu"] ?>">
                 <input type="hidden" name="id_filmu" value="<?php echo($_GET["id_filmu"]); ?>">
                 <input type="hidden" id="id_sedadla" name="id_sedadla">
+                <input type="hidden" name="id_pouzivatela" value="<?php echo($_SESSION['id']); ?>">
                 <button class="submitButton" type="submit"
                         style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">
                     POTVRDIŤ!
@@ -77,12 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </div>
+<script> var id_pouzivatela =<?php echo $_SESSION['id']; ?>;</script>
 <script src="../Assets/js/scrollFunction.js"></script>
 <script src="../Assets/js/Example.js"></script>
 <script src="../Assets/js/Example2.js"></script>
 <script src="../Assets/js/displayFunction.js"></script>
 <script src="../Assets/js/kinosala.js"></script>
-<script> var stolicky =<?php echo json_encode($storageStolicka->LoadStolickaPreFilm($_GET['id_filmu'])); ?>;</script>
+
+
 
 </body>
 </html>
