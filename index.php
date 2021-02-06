@@ -16,7 +16,7 @@ include "Models/Film.php";
 
 <head>
 
-    <?php include "Views/Components/Head.php";?>
+    <?php include "Views/Components/Head.php"; ?>
     <title>HOME</title>
 
 </head>
@@ -53,7 +53,7 @@ include "Views/Components/Body.php";
 </div>
 
 
-<?php include "Views/Components/Footer.php";?>
+<?php include "Views/Components/Footer.php"; ?>
 
 <script src="Assets/js/scrollFunction.js"></script>
 <script src="Assets/js/Example.js"></script>

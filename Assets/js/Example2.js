@@ -3,6 +3,7 @@ function highlight() {
     var n = i.getDay();
     return n;
 }
+console.log(highlight());
     var a = document.getElementById("monday");
     var b = document.getElementById("thuesday");
     var c = document.getElementById("wednesday");
@@ -17,7 +18,7 @@ function highlight() {
     if(highlight() === 4) { d.style.backgroundColor = "purple"; }
     if(highlight() === 5) { e.style.backgroundColor = "purple"; }
     if(highlight() === 6) { f.style.backgroundColor = "purple"; }
-    if(highlight() === 7) { g.style.backgroundColor = "purple"; }
+    if(highlight() === 0) { g.style.backgroundColor = "purple"; }
 
 
 

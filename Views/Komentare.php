@@ -1,5 +1,4 @@
 <?php
-include '../Models/Komentar.php';
 include '../Controlers/DBKomentare.php';
 session_start();
 
@@ -13,7 +12,7 @@ if (isset($_REQUEST['logout'])) {
 <html lang="en">
 
 <head>
-    <?php include "Components/Head.php";?>
+    <?php include "Components/Head.php"; ?>
     <link rel="stylesheet" href="../CSS/Ohlasy.css">
     <title>KOMENTÁRE</title>
 </head>
@@ -30,57 +29,68 @@ include "Components/NavbarDays.php"
 ?>
 <?php
 
-$storage = new DBKomentare();
-
-if(isset($_POST["nick"]) && isset($_POST["text"])) {
-    $kom = new Komentar(0,$_POST["nick"], $_POST["text"]);
-    $storage->Save($kom);
-}
-
-if(isset($_GET["delete"])) {
-    $storage->Delete($_GET["delete"]);
-}
 ?>
 
 <div class="container">
-<div class="chat-container">
-    <?php foreach ($storage->Load() as $komentar) { ?>
+    <div class="chat-container">
 
-        <div class="message">
-            <?php if ($_SESSION["isAdmin"] == 1) {
-                echo '<a href="?delete='.$komentar->getId().'">x</a>';
-            }
-            ?>
+        <form id="form_komentare" method="post" class="send-message-form">
+            <label>
+                <input type="text" name="nick" placeholder="Vaše meno/nick" required>
+            </label>
+            <textarea class="text_area" name="text" placeholder="Miesto pre váš komentár" required></textarea>
 
-            <div class="name"> <?php echo $komentar->getNick() ?> </div>
-            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"><?php echo $komentar->getText() ?></div>
-        </div>
-    <?php } ?>
-</div>
+            <input type="submit" class="text-button" name="sent">
+        </form>
 
-    <form method="post" class="send-message-form">
-        <label>
-            <input type="text" name="nick" placeholder="NICK" required>
-        </label>
-        <label>
-            <input type="text" name="text" placeholder="Komentár" required>
-        </label>
-        <input type="submit" class="text-button" name="sent">
-    </form>
-
-</div>
+    </div>
 
 
-<?php
-include "Components/scrollButton.php";
-include "Components/Footer.php";
-?>
+    <?php
+    include "Components/scrollButton.php";
+    include "Components/Footer.php";
+    ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="../Assets/js/scrollFunction.js"></script>
+    <script src="../Assets/js/Example.js"></script>
+    <script src="../Assets/js/Example2.js"></script>
+    <script src="../Assets/js/displayFunction.js"></script>
+    <script>
+        function vymaz(id) {
+            $.ajax({
+                type: "DELETE",
+                url: 'komentuj.php?id=' + id,
+                success: function (response) {
+                    nacitanie();
+                }
+            });
+        }
+
+        function nacitanie() {
+            $.ajax({
+                type: "GET",
+                url: 'komentuj.php',
+                success: function (data) {
+                    $('.message').remove();
+                    data.forEach(element => $('<div class="message">\n' +
+                        <?php if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1) {
+                            echo '\'<a onclick="vymaz(\'+element.id+\')">x</a>\n\' +';
+                        }
+                        ?>
+                        '            <div class="name">' + element.nick + '</div>\n' +
+                        '            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"> ' + element.text + ' </div>\n' +
+                        '        </div>').insertAfter($('#form_komentare')));
 
 
-<script src="../Assets/js/scrollFunction.js"></script>
-<script src="../Assets/js/Example.js"></script>
-<script src="../Assets/js/Example2.js"></script>
-<script src="../Assets/js/displayFunction.js"></script>
+                }
+            });
+
+        };
+
+    </script>
+    <script src="../Assets/js/komentare.js"></script>
 
 </body>
 </html>

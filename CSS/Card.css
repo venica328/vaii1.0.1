@@ -57,6 +57,11 @@ body {
     transform: translate(-50%, -50%);
     text-align: left;
     font-family: system-ui;
+    -webkit-line-clamp: 17;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
 }
 
 .cardButtons {

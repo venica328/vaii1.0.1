@@ -1,5 +1,7 @@
 <?php
 
+include "../Models/Komentar.php";
+
 class DBKomentare
 {
 

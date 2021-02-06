@@ -1,6 +1,6 @@
 <?php
 
-class Komentar
+class Komentar implements \JsonSerializable
 {
     private $id;
     private $nick;
@@ -52,6 +52,11 @@ class Komentar
     public function setText($text)
     {
         $this->text = $text;
+    }
+
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
     }
 
 

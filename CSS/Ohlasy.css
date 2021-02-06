@@ -1,5 +1,17 @@
+.text_area {
+    width: -webkit-fill-available;
+    height:70px;
+    border: purple solid 5px ;
+    display: block;
+    direction: initial;
+}
+
 * {
     box-sizing: border-box;
+}
+
+.message a {
+    cursor: pointer;
 }
 .container {
     width: 900px;
@@ -26,7 +38,6 @@
     transform: rotate(180deg);
     direction: ltr;
     background-color: lightseagreen;
-
 }
 
 .name {
@@ -56,6 +67,9 @@
 
 }
 
+#form_komentare {
+    transform: rotate(180deg);
+}
 
 
 .send-message-form input {
@@ -63,6 +77,7 @@
     border: solid 3px purple;
     font-size: 15px;
     padding: 10px;
+    direction: initial;
 }
 .send-message-form button {
     display: inline-flex;
@@ -76,6 +91,7 @@
     font-family: cursive;
     font-size: 15px;
     text-align: center;
+    background-color: lightseagreen;
 }
 
 @media (min-width: 500px) {

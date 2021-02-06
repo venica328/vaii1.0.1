@@ -31,7 +31,6 @@ $(document).ready(function () {
 
     });
 
-    console.log("123");
     $('#form_nakup').submit(function (e) {
         e.preventDefault();
         $.ajax({

@@ -1,6 +1,6 @@
 <?php
 
-include "../Models/Sedacky.php";
+include (dirname(__DIR__)."..\Models\Sedacky.php");
 
 class DBKinosala
 {

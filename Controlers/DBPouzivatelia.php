@@ -37,6 +37,13 @@ class DBPouzivatelia
         return $pouzivatelia;
     }
 
+    public function LoadNick($id)
+    {
+        $sql = 'SELECT username FROM vaiiko.pouzivatelia where id_pouzivatela=' . $id;
+
+        return $sql;
+    }
+
     function Delete($id)
     {
         $sql = 'DELETE FROM vaiiko.pouzivatelia where id_pouzivatela=' . $id;
