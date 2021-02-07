@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href="Register.php">Nie ste zargistrovaný?</a>
             </div>
             <a href="../index.php">HOME</a>
+        </form>
     </div>
 </div>
 

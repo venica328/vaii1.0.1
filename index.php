@@ -23,14 +23,7 @@ include "Models/Film.php";
 
 <body>
 
-<h1>KINOPRO</h1>
-<div id="left"></div>
-<div id="right"></div>
-
-
-<?php
-include "Views/Components/Body.php";
-?>
+<?php include "Views/Components/Body.php";?>
 
 <div class="cards">
 
@@ -52,13 +45,12 @@ include "Views/Components/Body.php";
     <?php } ?>
 </div>
 
-
 <?php include "Views/Components/Footer.php"; ?>
 
 <script src="Assets/js/scrollFunction.js"></script>
 <script src="Assets/js/Example.js"></script>
 <script src="Assets/js/Example2.js"></script>
-<script src="Assets/js/displayFunction.js"></script>
+<script src="Assets/js/alerts.js"></script>
 
 </body>
 </html>

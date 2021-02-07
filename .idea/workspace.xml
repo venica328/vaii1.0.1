@@ -19,22 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="ajax pre kinosalu je hotov a je spraveny js pre zobrazenie aky je dnes dnes, tak ten je zvyrazneny">
-      <change afterPath="$PROJECT_DIR$/Assets/js/komentare.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/komentuj.php" afterDir="false" />
+    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="Druhy ajax s komentarmi hotovy plus doladenie dizajnu.">
+      <change afterPath="$PROJECT_DIR$/Assets/js/alerts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/www.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/www.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/js/Example2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/Example2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/displayFunction.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/js/kinosala.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/kinosala.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/BuyTickets.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/BuyTickets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/registerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/registerForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/Ohlasy.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Ohlasy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlers/DBKinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBKinosala.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlers/DBKomentare.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBKomentare.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlers/DBPouzivatelia.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/DBPouzivatelia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Komentar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Komentar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Components/Cards.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Components/Cards.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Kinosala.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Components/Body.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Components/Body.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Kinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Kinosala.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Komentare.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Komentare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Vstupenky.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Vstupenky.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +149,8 @@
       <workItem from="1612548504598" duration="11015000" />
       <workItem from="1612563568872" duration="2240000" />
       <workItem from="1612570371286" duration="649000" />
-      <workItem from="1612627873184" duration="15291000" />
+      <workItem from="1612627873184" duration="15339000" />
+      <workItem from="1612713222674" duration="7443000" />
     </task>
     <task id="LOCAL-00001" summary="last change">
       <created>1606173753829</created>
@@ -235,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612562259353</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Druhy ajax s komentarmi hotovy plus doladenie dizajnu.">
+      <created>1612655545740</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1612655545740</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +274,8 @@
     <MESSAGE value="prerobena kinosala na novy sposob  a doplnene filmy kde entita moze mazat pridavat a aj editovat" />
     <MESSAGE value="kinosala pre pripravenie na ajax" />
     <MESSAGE value="ajax pre kinosalu je hotov a je spraveny js pre zobrazenie aky je dnes dnes, tak ten je zvyrazneny" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajax pre kinosalu je hotov a je spraveny js pre zobrazenie aky je dnes dnes, tak ten je zvyrazneny" />
+    <MESSAGE value="Druhy ajax s komentarmi hotovy plus doladenie dizajnu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Druhy ajax s komentarmi hotovy plus doladenie dizajnu." />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="67" key="#CLI_Interpreters" timestamp="1606158962028">
@@ -382,10 +391,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1605787907737" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1612562261364">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1612655547440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612562261364" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612655547440" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610958983038" />
     <state x="668" y="289" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605727085480">
       <screen x="0" y="0" width="1536" height="824" />

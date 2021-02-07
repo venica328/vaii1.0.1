@@ -7,18 +7,11 @@ session_start();
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../CSS/Navbar.css">
-    <link rel="stylesheet" href="../CSS/Background.css">
-    <link rel="stylesheet" href="../CSS/Card.css">
-    <link rel="stylesheet" href="../CSS/scrollButton.css">
-    <link rel="stylesheet" href="../CSS/NavbarDays.css">
-    <link rel="stylesheet" href="../CSS/Footer-Dark.css">
+    <?php include "Components/Head.php";?>
     <link rel="stylesheet" href="../CSS/Vstupenky.css">
+
     <title>VSTUPENKY</title>
+
 </head>
 
 <body>
@@ -30,9 +23,6 @@ session_start();
 <?php
 include "Components/Navbar.php";
 show_navbar();
-?>
-
-<?php
 include "Components/NavbarDays.php"
 ?>
 
@@ -63,11 +53,8 @@ echo '
 ?>
 
 <?php
-include "Components/scrollButton.php"
-?>
-
-<?php
-include "Components/Footer.php"
+include "Components/scrollButton.php";
+include "Components/Footer.php";
 ?>
 
 

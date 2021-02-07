@@ -13,7 +13,6 @@ include "../Controlers/DBFilmy.php";
 <head>
 
     <?php include "Components/Head.php"; ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/Sedacky.css">
     <link rel="stylesheet" href="../CSS/modal.css">
@@ -23,6 +22,7 @@ include "../Controlers/DBFilmy.php";
 </head>
 
 <body>
+
 <h1>KINOPRO</h1>
 <div id="left"></div>
 <div id="right"></div>
@@ -50,15 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 
-<!-- The Modal -->
 <div id="myModal" class="modal">
 
-    <!-- Modal content -->
     <div class="modal-content">
 
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>nazov: <?php echo $storageFilm->Load($_GET["id_filmu"])->getInfo(); ?></h2>
+            <h2>Názov: <?php echo $storageFilm->Load($_GET["id_filmu"])->getInfo(); ?></h2>
         </div>
         <div class="modal-body">
             <p>Objednávate si stoličku s číslom: </p>
@@ -83,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="../Assets/js/scrollFunction.js"></script>
 <script src="../Assets/js/Example.js"></script>
 <script src="../Assets/js/Example2.js"></script>
-<script src="../Assets/js/displayFunction.js"></script>
 <script src="../Assets/js/kinosala.js"></script>
 
 

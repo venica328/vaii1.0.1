@@ -62,19 +62,19 @@ if(isset($_GET["id_filmu"]) && $_GET["id_filmu"] != '') {
     <div class="form-container">
         <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
         echo '?id_filmu=' . $film->getIdFilmu() ?>">
-            <label for="nazov">Názov filmu:</label>
+            <label>Názov filmu:</label>
             <div class="form-group"><input class="form-control"
                                            style="height: 50px; background: #e7e3e8;"
                                            type="text" name="info"
                                            value="<?php echo $film->getInfo() ?>">
             </div>
-            <label for="obsah">Obsah filmu:</label>
+            <label>Obsah filmu:</label>
             <div class="form-group"><textarea class="form-control"
-                                              style="padding: 5% 0% 30% 2%; background: #e7e3e8;" type="text"
+                                              style="padding: 5% 0% 30% 2%; background: #e7e3e8;"
                                               name="obsah"
                                               placeholder=""><?php echo $film->getObsah() ?></textarea>
             </div>
-            <label for="obrazok">Obrázok:</label>
+            <label>Obrázok:</label>
             <div><input type="file" name="uploadfile"/></div>
 
             <div class="form-group"><input class="form-control"
@@ -97,8 +97,7 @@ if(isset($_GET["id_filmu"]) && $_GET["id_filmu"] != '') {
 
 
 <script src="../Assets/js/jquery.min.js"></script>
-<script src="../bootstrap/js/bootstrap.min.edit.js"></script>
-<script src="../Assets/js/displayFunction.js"></script>
+<script src="../Assets/js/alerts.js"></script>
 
 </body>
 </html>

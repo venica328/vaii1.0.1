@@ -27,9 +27,6 @@ include "Components/Navbar.php";
 show_navbar();
 include "Components/NavbarDays.php"
 ?>
-<?php
-
-?>
 
 <div class="container">
     <div class="chat-container">
@@ -44,6 +41,7 @@ include "Components/NavbarDays.php"
         </form>
 
     </div>
+</div>
 
 
     <?php
@@ -56,7 +54,7 @@ include "Components/NavbarDays.php"
     <script src="../Assets/js/scrollFunction.js"></script>
     <script src="../Assets/js/Example.js"></script>
     <script src="../Assets/js/Example2.js"></script>
-    <script src="../Assets/js/displayFunction.js"></script>
+    <script src="../Assets/js/alerts.js"></script>
     <script>
         function vymaz(id) {
             $.ajax({
@@ -87,7 +85,7 @@ include "Components/NavbarDays.php"
                 }
             });
 
-        };
+        }
 
     </script>
     <script src="../Assets/js/komentare.js"></script>

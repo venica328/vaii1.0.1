@@ -56,6 +56,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["pass
                 </button>
             </div>
             <a href="../index.php">HOME</a>
+        </form>
     </div>
 </div>
 

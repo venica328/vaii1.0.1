@@ -51,7 +51,7 @@ $(document).ready(function () {
             url: 'nakup.php' + window.location.search,
             success: function (data) {
                 data.forEach(element => $("#" + element.id_sedadla).css("pointer-events", "none"));
-                data.forEach(element => ((element.id_pouzivatela == id_pouzivatela) ? $("#" + element.id_sedadla).css("background", "green") : $("#" + element.id_sedadla).css("background", "red")));
+                data.forEach(element => ((element.id_pouzivatela == id_pouzivatela) ? $("#" + element.id_sedadla).css("background", "#45ae23") : $("#" + element.id_sedadla).css("background", "red")));
 
 
             }
