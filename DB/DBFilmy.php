@@ -1,6 +1,6 @@
 <?php
 
-
+include (dirname(__DIR__)."..\Models\Film.php");
 class DBFilmy
 {
     private const DB_HOST = 'localhost';
@@ -9,6 +9,9 @@ class DBFilmy
     private const DB_PASS = 'dtb456';
     private $db;
 
+    /**
+     * DBFilmy constructor.
+     */
     public function __construct()
     {
         try{
@@ -19,6 +22,9 @@ class DBFilmy
 
     }
 
+    /**
+     * @param Film $film
+     */
     function Save(Film $film)
     {
         $sql = 'INSERT INTO vaiiko.filmy(info, obsah, obrazok) VALUES (?,?,?)';
@@ -26,6 +32,9 @@ class DBFilmy
 
     }
 
+    /**
+     * @return array
+     */
     public function LoadAll()
     {
         $filmy = [];
@@ -38,6 +47,11 @@ class DBFilmy
         return $filmy;
     }
 
+    /**
+     * Metoda ktora vrati vsetky filmy
+     * @param $id
+     * @return Film|mixed
+     */
     public function Load($id)
     {
         $filmy = [];

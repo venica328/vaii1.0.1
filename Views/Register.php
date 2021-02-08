@@ -1,6 +1,8 @@
 <?php
 session_start();
-include "../Controlers/DBPouzivatelia.php";
+include "../DB/DBPouzivatelia.php";
+include "../Controlers/register.php";
+register();
 ?>
 
 <!DOCTYPE html>
@@ -15,28 +17,6 @@ include "../Controlers/DBPouzivatelia.php";
 <body>
 
 
-<?php
-if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["password_again"])) {
-    $storage = new DBPouzivatelia();
-    $ret = $storage->Register($_POST["username"], $_POST["password"], $_POST["password_again"]);
-    if($ret == 0) {
-        $message = "Zadali ste nesprávne meno alebo heslo!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        header('Location: Login.php');
-        exit;
-    } elseif ($ret == -1) {
-        $message = "Používateľské meno už existuje!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-    } elseif ($ret == -2) {
-        $message = "Heslá sa nezhodujú!/Nemajú dĺžku 8 znakov!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-    }else {
-        $message = "Neznáma chyba!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-    }
-}
-
-?>
 
 <div class="register-photo" style="background: purple;">
     <div class="form-container">

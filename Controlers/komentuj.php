@@ -1,6 +1,6 @@
 <?php
 
-include "../Controlers/DBKomentare.php";
+include "../DB/DBKomentare.php";
 
 $storage_komentar = new DBKomentare();
 

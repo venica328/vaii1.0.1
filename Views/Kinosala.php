@@ -2,9 +2,8 @@
 $_SERVER["SERVER_NAME"] = "localhost";
 session_start();
 
-include_once "../Models/Film.php";
-include "../Controlers/DBKinosala.php";
-include "../Controlers/DBFilmy.php";
+include "../DB/DBKinosala.php";
+include "../DB/DBFilmy.php";
 ?>
 
 <!DOCTYPE html>
@@ -34,21 +33,8 @@ include "Components/NavbarDays.php";
 include "Components/Sedenie.php";
 include "Components/scrollButton.php";
 include "Components/Footer.php";
-
-?>
-
-<?php
-$storageStolicka = new DBKinosala();
 $storageFilm = new DBFilmy();
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sedacky = new Sedacky('', $_POST["id_sedadla"], $_POST["id_filmu"], $_SESSION["id"]);
-    $storageStolicka->Save($sedacky);
-}
-
 ?>
-
 
 <div id="myModal" class="modal">
 

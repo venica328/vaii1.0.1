@@ -1,6 +1,8 @@
 <?php
 session_start();
-include "../Controlers/DBPouzivatelia.php";
+include "../DB/DBPouzivatelia.php";
+include "../Controlers/login.php";
+login();
 ?>
 
 <!DOCTYPE html>
@@ -14,24 +16,6 @@ include "../Controlers/DBPouzivatelia.php";
 </head>
 <body>
 
-
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $storage = new DBPouzivatelia();
-    if($storage->Login($username, $password)) {
-        header('Location: ../index.php');
-        exit;
-
-    } else {
-        $message = "Zadali ste nesprávne meno alebo heslo!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-    }
-}
-
-?>
 
 <div class="register-photo" style="background: purple;">
     <div class="form-container">

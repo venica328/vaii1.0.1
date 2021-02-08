@@ -1,7 +1,7 @@
 <?php
 
-include "Controlers/DBFilmy.php";
-include "Controlers/DBKinosala.php";
+include "DB/DBFilmy.php";
+include "DB/DBKinosala.php";
 
 
 if (isset($_GET["delete"])) {
@@ -15,7 +15,7 @@ if (isset($_GET["delete_kinosala"])) {
 }
 
 
-function show_edit($film)
+function show_card($film)
 {
 
     if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1) {

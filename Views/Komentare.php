@@ -1,5 +1,5 @@
 <?php
-include '../Controlers/DBKomentare.php';
+include '../DB/DBKomentare.php';
 session_start();
 
 if (isset($_REQUEST['logout'])) {
@@ -35,8 +35,9 @@ include "Components/NavbarDays.php"
             <label>
                 <input type="text" name="nick" placeholder="Vaše meno/nick" required>
             </label>
-            <textarea class="text_area" name="text" placeholder="Miesto pre váš komentár" required></textarea>
-
+            <label>
+                <textarea class="text_area" name="text" placeholder="Miesto pre váš komentár" required></textarea>
+            </label>
             <input type="submit" class="text-button" name="sent">
         </form>
 
@@ -44,51 +45,46 @@ include "Components/NavbarDays.php"
 </div>
 
 
-    <?php
-    include "Components/scrollButton.php";
-    include "Components/Footer.php";
-    ?>
+<?php
+include "Components/scrollButton.php";
+include "Components/Footer.php";
+?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="../Assets/js/scrollFunction.js"></script>
-    <script src="../Assets/js/Example.js"></script>
-    <script src="../Assets/js/Example2.js"></script>
-    <script src="../Assets/js/alerts.js"></script>
-    <script>
-        function vymaz(id) {
-            $.ajax({
-                type: "DELETE",
-                url: 'komentuj.php?id=' + id,
-                success: function (response) {
-                    nacitanie();
-                }
-            });
-        }
-
-        function nacitanie() {
-            $.ajax({
-                type: "GET",
-                url: 'komentuj.php',
-                success: function (data) {
-                    $('.message').remove();
-                    data.forEach(element => $('<div class="message">\n' +
-                        <?php if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1) {
-                            echo '\'<a onclick="vymaz(\'+element.id+\')">x</a>\n\' +';
-                        }
-                        ?>
-                        '            <div class="name">' + element.nick + '</div>\n' +
-                        '            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"> ' + element.text + ' </div>\n' +
-                        '        </div>').insertAfter($('#form_komentare')));
+<script src="../Assets/js/scrollFunction.js"></script>
+<script src="../Assets/js/Example.js"></script>
+<script src="../Assets/js/Example2.js"></script>
+<script src="../Assets/js/alerts.js"></script>
+<script src="../Assets/js/vymaz.js"></script>
 
 
-                }
-            });
+<script>
 
-        }
 
-    </script>
-    <script src="../Assets/js/komentare.js"></script>
+    function nacitanie() {
+        $.ajax({
+            type: "GET",
+            url: '/Controlers/komentuj.php',
+            success: function (data) {
+                $('.message').remove();
+                data.forEach(element => $('<div class="message">\n' +
+                    <?php if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1) {
+                        echo '\'<a onclick="vymaz(\'+element.id+\')">x</a>\n\' +';
+                    }
+                    ?>
+                    '            <div class="name">' + element.nick + '</div>\n' +
+                    '            <div style="padding: 1px 0 30px 41px;margin: 30px 5px 5px -37px;"> ' + element.text + ' </div>\n' +
+                    '        </div>').insertAfter($('#form_komentare')));
+
+
+            }
+        });
+
+    }
+
+</script>
+<script src="../Assets/js/komentare.js"></script>
 
 </body>
 </html>

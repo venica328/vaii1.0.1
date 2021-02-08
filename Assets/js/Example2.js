@@ -3,7 +3,6 @@ function highlight() {
     var n = i.getDay();
     return n;
 }
-console.log(highlight());
     var a = document.getElementById("monday");
     var b = document.getElementById("thuesday");
     var c = document.getElementById("wednesday");

@@ -7,7 +7,6 @@ if (isset($_REQUEST['logout'])) {
 }
 
 include "Views/Components/Cards.php";
-include "Models/Film.php";
 
 ?>
 
@@ -36,7 +35,7 @@ include "Models/Film.php";
                 <div class="overlay">
                     <div class="text">
                         <?php
-                        show_edit($film);
+                        show_card($film);
                         ?>
                     </div>
                 </div>
