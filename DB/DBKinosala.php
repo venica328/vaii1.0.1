@@ -46,6 +46,12 @@ class DBKinosala
         $this->db->query($sql);
     }
 
+    function DeleteStolickuPreFilm($id_filmu,$id_sedadla) {
+
+        $sql= 'DELETE FROM vaiiko.kinosala where id_filmu=' .$id_filmu. ' AND id_sedadla='.$id_sedadla;
+        $this->db->query($sql);
+    }
+
     function LoadStolickaPreFilm($id) {
         $stolicky = [];
         $dbStolicky = $this->db->query('SELECT * FROM vaiiko.kinosala where id_filmu ='. $id);

@@ -29,7 +29,7 @@ edit();
 
 <div class="register-photo" style="background: purple;">
     <div class="form-container">
-        <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+        <form method="post" style="word-wrap: break-word;" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
         echo '?id_filmu=' . inicializacia()->getIdFilmu() ?>">
             <label>Názov filmu:</label>
             <div class="form-group"><input class="form-control"

@@ -63,6 +63,34 @@ $storageFilm = new DBFilmy();
         </div>
     </div>
 </div>
+
+<div id="myModal2" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Názov: <?php echo $storageFilm->Load($_GET["id_filmu"])->getInfo(); ?></h2>
+        </div>
+        <div class="modal-body">
+            <p>Rušíte rezerváciu pre stoličku s číslom: </p>
+            <div id="stolicka2"></div>
+        </div>
+
+        <div class="modal-footer">
+            <form method="delete" id="form_zrusenie" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+            echo '?id_filmu=' . $_GET["id_filmu"] ?>">
+                <input type="hidden" id="id_filmu2" name="id_filmu2" value="<?php echo($_GET["id_filmu"]); ?>">
+                <input type="hidden" id="id_sedadla2" name="id_sedadla2">
+                <button class="submitButton" type="submit"
+                        style="background-color: lightseagreen; display: block; width: 40%; margin: auto; text-align: center;">
+                    ZRUŠIŤ REZERVÁCIU
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script> var id_pouzivatela =<?php echo $_SESSION['id']; ?>;</script>
 <script src="../Assets/js/scrollFunction.js"></script>
 <script src="../Assets/js/Example.js"></script>
