@@ -8,6 +8,10 @@ class Pouzivatel
     private $password;
     private $isAdmin;
 
+    /**
+     * Pouzivatel constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu Pouzivatel
+     */
     public function __construct($id_pouzivatela, $username, $password, $isAdmin)
     {
         $this->id_pouzivatela = $id_pouzivatela;
@@ -18,6 +22,7 @@ class Pouzivatel
 
     /**
      * @return mixed
+     * Funkcia vráti id
      */
     public function getIdPouzivatela()
     {
@@ -26,6 +31,7 @@ class Pouzivatel
 
     /**
      * @return mixed
+     * Funkcia vráti meno
      */
     public function getUsername()
     {
@@ -34,6 +40,7 @@ class Pouzivatel
 
     /**
      * @return mixed
+     * Funkcia vráti heslo
      */
     public function getPassword()
     {
@@ -42,6 +49,7 @@ class Pouzivatel
 
     /**
      * @return mixed
+     * Funkcia vráti informáciu, či je daný používateľ adminom
      */
     public function getIsAdmin()
     {
@@ -50,6 +58,7 @@ class Pouzivatel
 
     /**
      * @param mixed $id_pouzivatela
+     * Funkcia umožní nastaviť id
      */
     public function setIdPouzivatela($id_pouzivatela): void
     {
@@ -58,6 +67,7 @@ class Pouzivatel
 
     /**
      * @param mixed $username
+     * Funkcia umožní nastaviť meno
      */
     public function setUsername($username): void
     {
@@ -66,6 +76,7 @@ class Pouzivatel
 
     /**
      * @param mixed $password
+     * Funkcia umožní nastaviť heslo
      */
     public function setPassword($password): void
     {
@@ -74,6 +85,7 @@ class Pouzivatel
 
     /**
      * @param mixed $isAdmin
+     * Funkcia umožní nastaviť hodnotu, či je používateľ admin
      */
     public function setIsAdmin($isAdmin): void
     {

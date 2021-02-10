@@ -1,6 +1,7 @@
 <?php
 
 include (dirname(__DIR__)."..\Models\Film.php");
+
 class DBFilmy
 {
     private const DB_HOST = 'localhost';
@@ -11,6 +12,7 @@ class DBFilmy
 
     /**
      * DBFilmy constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu DBFilmy
      */
     public function __construct()
     {
@@ -24,6 +26,7 @@ class DBFilmy
 
     /**
      * @param Film $film
+     * Funkcia uloží vytvorený film do databázy "filmy"
      */
     function Save(Film $film)
     {
@@ -34,6 +37,7 @@ class DBFilmy
 
     /**
      * @return array
+     * Funkcia vráti pole všetkých filmov
      */
     public function LoadAll()
     {
@@ -48,9 +52,9 @@ class DBFilmy
     }
 
     /**
-     * Metoda ktora vrati vsetky filmy
      * @param $id
      * @return Film|mixed
+     * Metóda, ktorá vráti konkrétne údaje daného filmu, čiže konkrétny film podľa id
      */
     public function Load($id)
     {
@@ -64,12 +68,20 @@ class DBFilmy
         return $filmy[0];
     }
 
+    /**
+     * @param $id
+     * Funkcia, ktorá zmaže konkrétny film podľa id
+     */
     function Delete($id)
     {
         $sql='DELETE FROM vaiiko.filmy where id_filmu=' .$id;
         $this->db->query($sql);
     }
 
+    /**
+     * @param Film $film
+     * Funkcia, ktorá aktualizuje zmenené údaje konkrétneho filmu podľa id
+     */
     function Update(Film $film) {
 
         $sql= 'UPDATE vaiiko.filmy SET info = "'.$film->getInfo().'" , obsah = "'.$film->getObsah().'", obrazok = "'.$film->getObrazok().'" where id_filmu=' .$film->getIdFilmu();

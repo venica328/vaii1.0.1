@@ -1,3 +1,7 @@
+/**
+ * @param id
+ * Funkcia umožňuje vymazať komentár podľa id cez ajax
+ */
 function vymaz(id) {
     $.ajax({
         type: "DELETE",

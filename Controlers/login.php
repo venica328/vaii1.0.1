@@ -1,4 +1,7 @@
 <?php
+/**
+ * Funkcia umožní prihlásiť vytvoreného používateľa
+ */
 function login() {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $storage = new DBPouzivatelia();

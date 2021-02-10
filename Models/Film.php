@@ -8,6 +8,10 @@ class Film
     private $obsah;
     private $obrazok;
 
+    /**
+     * Film constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu Film
+     */
     public function __construct($id_filmu, $info, $obsah, $obrazok)
     {
         $this->id_filmu = $id_filmu;
@@ -18,6 +22,7 @@ class Film
 
     /**
      * @return mixed
+     * Funkcia vráti id filmu
      */
     public function getIdFilmu()
     {
@@ -26,6 +31,7 @@ class Film
 
     /**
      * @return mixed
+     * Funkcia vráti info(názov) filmu
      */
     public function getInfo()
     {
@@ -34,6 +40,7 @@ class Film
 
     /**
      * @return mixed
+     * Funkcia vráti obsah filmu
      */
     public function getObsah()
     {
@@ -42,6 +49,7 @@ class Film
 
     /**
      * @return mixed
+     * Funkcia vráti obrázok filmu
      */
     public function getObrazok()
     {
@@ -50,6 +58,7 @@ class Film
 
     /**
      * @param mixed $id_filmu
+     * Funkcia umožní pridať hodnotu id filmu
      */
     public function setIdFilmu($id_filmu): void
     {
@@ -58,6 +67,7 @@ class Film
 
     /**
      * @param mixed $info
+     * Funkcia umožní pridať hodnotu info filmu
      */
     public function setInfo($info): void
     {
@@ -66,6 +76,7 @@ class Film
 
     /**
      * @param mixed $obsah
+     * Funkcia umožní pridať hodnotu obsah filmu
      */
     public function setObsah($obsah): void
     {
@@ -74,6 +85,7 @@ class Film
 
     /**
      * @param mixed $obrazok
+     * Funkcia umožní pridať hodnotu obrazok filmu
      */
     public function setObrazok($obrazok): void
     {

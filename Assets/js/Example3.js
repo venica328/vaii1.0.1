@@ -1,5 +1,6 @@
-
-
+/**
+ * Umožňuje responzívnosť filmov zobrazených v kartách
+ */
 function myFunction3() {
     var x = document.getElementById("cards");
     if (x.className === "cards") {

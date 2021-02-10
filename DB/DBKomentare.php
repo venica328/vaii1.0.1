@@ -11,6 +11,10 @@ class DBKomentare
     private const DB_PASS = 'dtb456';
     private $db;
 
+    /**
+     * DBKomentare constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu DBKomentare
+     */
     public function __construct()
     {
         try{
@@ -21,6 +25,10 @@ class DBKomentare
 
     }
 
+    /**
+     * @param Komentar $komentar
+     * Funkcia uloží pridaný komentár
+     */
     function Save(Komentar $komentar)
     {
         $sql = 'INSERT INTO vaiiko.komentare(nick,text) VALUES (?,?)';
@@ -28,6 +36,10 @@ class DBKomentare
 
     }
 
+    /**
+     * @return array
+     * Funkcia vráti všetky komentáre z databázy
+     */
     public function Load()
     {
         $komentare = [];
@@ -40,6 +52,10 @@ class DBKomentare
         return $komentare;
     }
 
+    /**
+     * @param $id
+     * Funkcia odstráni daný komentár podľa id
+     */
     function Delete($id)
     {
         $sql= 'DELETE FROM vaiiko.komentare where id=' .$id;

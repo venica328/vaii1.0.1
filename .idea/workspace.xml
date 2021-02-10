@@ -19,13 +19,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="Prerobena architektura + spravene osetrenie pre nezajednanie stolicky ak uz bola pred chvilou zajednana.">
+    <list default="true" id="3c06fecc-6da3-43d1-b1cd-9fe13b9c7527" name="Default Changelist" comment="Dorobenie odrezervovanie lístka v kinosále.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/Example.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/Example.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/Example2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/Example2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/Example3.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/Example3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/alerts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/js/kinosala.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/kinosala.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/komentare.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/komentare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/registerForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/registerForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/js/scrollFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/scrollFunction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/js/vymaz.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/js/vymaz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controlers/nakup.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/nakup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Footer-Dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Footer-Dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/NavbarDays.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/NavbarDays.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlers/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlers/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controlers/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controlers/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/DBFilmy.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBFilmy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/DBKinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBKinosala.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/DBKomentare.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBKomentare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/DBPouzivatelia.php" beforeDir="false" afterPath="$PROJECT_DIR$/DB/DBPouzivatelia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Film.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Film.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Komentar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Komentar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Pouzivatel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Pouzivatel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Sedacky.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Sedacky.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Components/NavbarDays.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Components/NavbarDays.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Kinosala.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Kinosala.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +164,8 @@
       <workItem from="1612713222674" duration="7995000" />
       <workItem from="1612783599992" duration="10701000" />
       <workItem from="1612815167753" duration="6464000" />
-      <workItem from="1612893917255" duration="7668000" />
+      <workItem from="1612893917255" duration="9513000" />
+      <workItem from="1612970551192" duration="6660000" />
     </task>
     <task id="LOCAL-00001" summary="last change">
       <created>1606173753829</created>
@@ -251,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612808240567</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Dorobenie odrezervovanie lístka v kinosále.">
+      <created>1612902396989</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1612902396989</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +313,8 @@
     <MESSAGE value="Druhy ajax s komentarmi hotovy plus doladenie dizajnu." />
     <MESSAGE value="Posledne upravy, kontrola validacie: OK" />
     <MESSAGE value="Prerobena architektura + spravene osetrenie pre nezajednanie stolicky ak uz bola pred chvilou zajednana." />
-    <option name="LAST_COMMIT_MESSAGE" value="Prerobena architektura + spravene osetrenie pre nezajednanie stolicky ak uz bola pred chvilou zajednana." />
+    <MESSAGE value="Dorobenie odrezervovanie lístka v kinosále." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dorobenie odrezervovanie lístka v kinosále." />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="67" key="#CLI_Interpreters" timestamp="1606158962028">
@@ -401,10 +430,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="82" height="441" key="SqlResolveConfigurable/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1605787907737" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1612808244585">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1612902398815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612808244585" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612902398815" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610958983038" />
     <state x="668" y="289" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605727085480">
       <screen x="0" y="0" width="1536" height="824" />
@@ -418,10 +447,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="232" width="403" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611075453423" />
-    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1611861693452">
+    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1612970604948">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1611861693452" />
+    <state x="397" y="209" width="703" height="524" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1612970604948" />
     <state x="1804" y="59" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611433266055">
       <screen x="1920" y="0" width="1366" height="728" />
     </state>

@@ -6,6 +6,10 @@ class Komentar implements \JsonSerializable
     private $nick;
     private $text;
 
+    /**
+     * Komentar constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu Komentar
+     */
     public function __construct($id, $nick, $text)
     {
         $this->id = $id;
@@ -13,9 +17,9 @@ class Komentar implements \JsonSerializable
         $this->text = $text;
     }
 
-
     /**
      * @return mixed
+     * Funkcia vráti id
      */
     public function getId()
     {
@@ -24,6 +28,7 @@ class Komentar implements \JsonSerializable
 
     /**
      * @return mixed
+     * Funkcia vráti nick
      */
     public function getNick()
     {
@@ -32,6 +37,7 @@ class Komentar implements \JsonSerializable
 
     /**
      * @param mixed $nick
+     * Funkcia umožní pridať nick filmu
      */
     public function setNick($nick)
     {
@@ -40,6 +46,7 @@ class Komentar implements \JsonSerializable
 
     /**
      * @return mixed
+     * Funkcia vráti text
      */
     public function getText()
     {
@@ -48,12 +55,17 @@ class Komentar implements \JsonSerializable
 
     /**
      * @param mixed $text
+     * Funkcia umožní pridať text
      */
     public function setText($text)
     {
         $this->text = $text;
     }
 
+    /**
+     * @return array|mixed
+     * Metóda vráti dáta z poľa
+     */
     public function jsonSerialize()
     {
         return get_object_vars($this);

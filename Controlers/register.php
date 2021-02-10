@@ -1,6 +1,10 @@
 
 <?php
 
+/**
+ * Funkcia umožní registrovať nového používateľa a ošetruje pridané dáta na strane servera
+ * Ošetruje sa to v DBPouzivatelia
+ */
 function register() {
     if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["password_again"])) {
         $storage = new DBPouzivatelia();

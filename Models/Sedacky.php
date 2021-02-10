@@ -8,6 +8,10 @@ class Sedacky implements \JsonSerializable
     private $id_filmu;
     private $id_pouzivatela;
 
+    /**
+     * Sedacky constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu Sedacky
+     */
     public function __construct($id, $id_sedadla, $id_filmu, $id_pouzivatela)
     {
         $this->id = $id;
@@ -18,6 +22,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @return mixed
+     * Funkcia vrati id
      */
     public function getId()
     {
@@ -26,6 +31,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @return mixed
+     * Funkcia vrati id sedadla
      */
     public function getIdSedadla()
     {
@@ -34,6 +40,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @return mixed
+     * Funkcia vrati id filmu
      */
     public function getIdFilmu()
     {
@@ -42,6 +49,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @return mixed
+     * Funkcia vrati id pouzivatela
      */
     public function getIdPouzivatela()
     {
@@ -50,6 +58,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @param mixed $id
+     * Funkcia umožní nastaviť id
      */
     public function setId($id): void
     {
@@ -58,6 +67,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @param mixed $id_sedadla
+     * Funkcia umožní nastaviť id sedadla
      */
     public function setIdSedadla($id_sedadla): void
     {
@@ -66,6 +76,7 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @param mixed $id_filmu
+     * Funkcia umožní nastaviť id filmu
      */
     public function setIdFilmu($id_filmu): void
     {
@@ -74,12 +85,17 @@ class Sedacky implements \JsonSerializable
 
     /**
      * @param mixed $id_pouzivatela
+     * Funkcia umožní nastaviť id pouzivatela
      */
     public function setIdPouzivatela($id_pouzivatela): void
     {
         $this->id_pouzivatela = $id_pouzivatela;
     }
 
+    /**
+     * @return array|mixed
+     * Metóda vráti dáta z poľa
+     */
     public function jsonSerialize()
     {
         return get_object_vars($this);

@@ -1,3 +1,7 @@
+/**
+ * Umožňuje na základe získanej číselnej hodnoty zmeniť farbu o tom aký je dnes deň
+ * @returns {number}
+ */
 function highlight() {
     var i = new Date();
     var n = i.getDay();

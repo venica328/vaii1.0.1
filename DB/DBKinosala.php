@@ -11,6 +11,10 @@ class DBKinosala
     private const DB_PASS = 'dtb456';
     private $db;
 
+    /**
+     * DBKinosala constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu DBKinosala
+     */
     public function __construct()
     {
         try{
@@ -21,6 +25,10 @@ class DBKinosala
 
     }
 
+    /**
+     * @param Sedacky $sedacky
+     * Funkcia, ktorá priradí sedadlo konkrétnemu používateľovi, ktorý je prihlásený
+     */
     function Save(Sedacky $sedacky)
     {
         $sql = 'INSERT INTO vaiiko.kinosala(id_filmu, id_pouzivatela, id_sedadla) VALUES (?,?,?)';
@@ -28,6 +36,10 @@ class DBKinosala
 
     }
 
+    /**
+     * @return array
+     * Funkcia vráti všetky sedačky
+     */
     public function Load()
     {
         $sedacky = [];
@@ -40,18 +52,32 @@ class DBKinosala
         return $sedacky;
     }
 
+    /**
+     * @param $id_filmu
+     * Funkcia odstráni celú kinosálu rezervovaných sedadiel a nechá ich nerezervované
+     */
     function Delete($id_filmu)
     {
         $sql= 'DELETE FROM vaiiko.kinosala where id_filmu=' .$id_filmu;
         $this->db->query($sql);
     }
 
+    /**
+     * @param $id_filmu
+     * @param $id_sedadla
+     * Funkcia odstráni rezervované sedadlo daným používateľom
+     */
     function DeleteStolickuPreFilm($id_filmu,$id_sedadla) {
 
         $sql= 'DELETE FROM vaiiko.kinosala where id_filmu=' .$id_filmu. ' AND id_sedadla='.$id_sedadla;
         $this->db->query($sql);
     }
 
+    /**
+     * @param $id
+     * @return array
+     * Funkcia vráti zarezervované stoličky
+     */
     function LoadStolickaPreFilm($id) {
         $stolicky = [];
         $dbStolicky = $this->db->query('SELECT * FROM vaiiko.kinosala where id_filmu ='. $id);

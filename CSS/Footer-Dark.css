@@ -32,6 +32,8 @@
   display: block;
 }
 
+
+
 @media (min-width: 500px) {
   .footer-dark {
     width: 60%;
@@ -50,12 +52,20 @@
 @media screen and (max-width: 700px) {
   .footer-item2 {
     padding: 10%;
+    margin: 20% 10% 0 10%;
+  }
+  .footer-dark {
+    width: 50%;
   }
 }
 
 @media screen and (max-width: 900px) {
   .footer-item2 {
     padding: 10%;
+    margin: 30% 10% 0 10%;
+  }
+  .footer-dark {
+    visibility: hidden;
   }
 }
 

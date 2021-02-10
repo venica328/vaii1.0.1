@@ -78,7 +78,7 @@ $storageFilm = new DBFilmy();
         </div>
 
         <div class="modal-footer">
-            <form method="delete" id="form_zrusenie" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+            <form method="post" id="form_zrusenie" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
             echo '?id_filmu=' . $_GET["id_filmu"] ?>">
                 <input type="hidden" id="id_filmu2" name="id_filmu2" value="<?php echo($_GET["id_filmu"]); ?>">
                 <input type="hidden" id="id_sedadla2" name="id_sedadla2">

@@ -4,17 +4,17 @@ $(document).ready(function () {
     var modal2 = document.getElementById("myModal2");
     nacitanie();
 
-// Get the <span> element that closes the modal
+    //tento element sa používa pre zavretie
     var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
+    //ak používateľ klikne na x modálneho okna, zavrie sa
     span.onclick = function () {
         modal.style.display = "none";
         modal2.style.display = "none";
         $("#" + id_stolicky).toggleClass('active');
     }
 
-// When the user clicks anywhere outside of the modal, close it
+    //ak používateľ klikne mimo modálneho okna, zavrie sa
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -26,7 +26,10 @@ $(document).ready(function () {
         }
     }
 
-
+    /**
+     * sedadlá sú funkčné
+     * každé sedadlo má svoje id
+     */
     $('.cinema-seats .seat').on('click', function () {
         $(this).toggleClass('active');
         modal.style.display = "block";
@@ -37,7 +40,10 @@ $(document).ready(function () {
 
     });
 
-
+    /**
+     * @param element
+     * Funkcia pre zobrazenie modálneho okna pre zrušenie rezervácie
+     */
     function showModal2(element) {
         element.toggleClass('active');
         modal2.style.display = "block";
@@ -47,6 +53,7 @@ $(document).ready(function () {
         id_stolicky = element.attr("id");
     }
 
+    //ajax pre rezervovanie sedadla
     $('#form_nakup').submit(function (e) {
         e.preventDefault();
         $.ajax({
@@ -62,6 +69,7 @@ $(document).ready(function () {
         });
     });
 
+    //ajax pre zrušenie zarezervovaného sedadla
     $('#form_zrusenie').submit(function (e) {
         e.preventDefault();
         $.ajax({
@@ -77,7 +85,12 @@ $(document).ready(function () {
         });
     });
 
-
+    /**
+     * Funkcia, ktorá načíta a zobrazí sedadlá v kinosále
+     * fialové sedadlá = voľné
+     * červené sedadlá = rezervované používaeľmi
+     * zelené sedadlá = rezervované aktuálne prihláseným používateľom
+     */
     function nacitanie() {
         $.ajax({
             type: "GET",
@@ -92,6 +105,7 @@ $(document).ready(function () {
         });
     };
 
+    //dáva interval pre automatické refreshnutie stránky
     setInterval(function (){
         nacitanie();
     },2000);

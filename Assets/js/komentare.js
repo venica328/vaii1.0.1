@@ -1,6 +1,9 @@
 $(document).ready(function () {
     nacitanie();
 
+    /**
+     * ajax pre načítanie komentárov
+     */
     $('#form_komentare').submit(function (e) {
         e.preventDefault();
         $.ajax({
@@ -14,6 +17,7 @@ $(document).ready(function () {
         });
     });
 
+    //dáva interval pre automatické refreshnutie stránky
     setInterval(function (){
         nacitanie();
     },5000);

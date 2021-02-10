@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * @return Film|mixed
+ * Funkcia vráti údaje o danom filme v Edit.php alebo nevráti žiadne dáta pre vytvorenie nového filmu
+ */
 function inicializacia()
 {
     $storage = new DBFilmy();
@@ -12,6 +15,9 @@ function inicializacia()
     return $film;
 }
 
+/**
+ * Funkcia umožní aktualizovať dáta o vytvorenom filme alebo pridať nový film
+ */
 function edit()
 {
     if (isset($_POST["info"]) && isset($_POST["obsah"])) {

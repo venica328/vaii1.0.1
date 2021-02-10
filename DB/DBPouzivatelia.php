@@ -9,6 +9,10 @@ class DBPouzivatelia
     private const DB_PASS = 'dtb456';
     private $db;
 
+    /**
+     * DBPouzivatelia constructor.
+     * Plní funkciu pre počiatočné nastavenie objektu DBPouzivatelia
+     */
     public function __construct()
     {
         try {
@@ -18,6 +22,10 @@ class DBPouzivatelia
         }
     }
 
+    /**
+     * @param Pouzivatel $pouzivatel
+     * Funkcia uloží registrovaného používateľa do databázy
+     */
     function Save(Pouzivatel $pouzivatel)
     {
         $sql = 'INSERT INTO vaiiko.pouzivatelia(username,password,isAdmin) VALUES (?,?,?)';
@@ -25,6 +33,10 @@ class DBPouzivatelia
 
     }
 
+    /**
+     * @return array
+     * Funkcia vráti pole používateľov
+     */
     public function Load()
     {
         $pouzivatelia = [];
@@ -37,6 +49,11 @@ class DBPouzivatelia
         return $pouzivatelia;
     }
 
+    /**
+     * @param $id
+     * @return string
+     * Funkcia vráti meno používateľa
+     */
     public function LoadNick($id)
     {
         $sql = 'SELECT username FROM vaiiko.pouzivatelia where id_pouzivatela=' . $id;
@@ -44,12 +61,22 @@ class DBPouzivatelia
         return $sql;
     }
 
+    /**
+     * @param $id
+     * Funkcia odstráni používateľa podľa id
+     */
     function Delete($id)
     {
         $sql = 'DELETE FROM vaiiko.pouzivatelia where id_pouzivatela=' . $id;
         $this->db->query($sql);
     }
 
+    /**
+     * @param $username
+     * @param $password
+     * @return bool
+     * Funkcia umožní sa prihlásiť danému užívateľovi, ak má platné údaje, ktorými sa registroval
+     */
     public function Login($username, $password)
     {
         $result = $this->Load();
@@ -64,6 +91,18 @@ class DBPouzivatelia
         return false;
     }
 
+    /**
+     * @param $username
+     * @param $password
+     * @param $password_again
+     * @return int
+     * Funkcia umožní vytvoriť nového používateľa a zašifruje mu heslo
+     * Funkcia ošetruje pridané dáta, ak je niečo zlé napríklad už existujúce meno sa nachádza v databáze
+     * nemôže ho registrovať pod takýmto menom
+     *  0 pre nesprávne meno/heslo
+     * -1 ak používateľské meno už existuje
+     * -2 ak sa heslá nezhodujú/nemajú dostatok znakov
+     */
     public function Register($username, $password, $password_again)
     {
         $result = $this->Load();
